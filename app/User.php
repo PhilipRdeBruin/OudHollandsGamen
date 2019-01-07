@@ -16,7 +16,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'gebr_naam', 'email', 'password',
+        'voornaam', 'initialen', 'tussenv', 'achternaam',
+        'straatnaam', 'huisnummer', 'postcode', 'woonplaats',
+        'telefoon', 'mobiel', 'wachtwoord_sh',
     ];
 
     /**
@@ -27,4 +30,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+    * de gebruiker waaronder de advertentie valt
+    */
+    public function advertenties() {
+        return $this->hasMany('App\Advertentie', 'verkoper_id');
+    }
+
+    /**
+    * de gebruiker waaronder de bieding valt
+    */
+    public function biedingen() {
+        return $this->hasMany('App\Bieding', 'koper_id');
+    }
 }
