@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('mijnMarktplaats', 'mijnMarktplaats') }}</title>
+    <title>{{ config('OudHollandsGamen', 'OudHollandsGamen') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel"  style="background:#46d">
             <div class="container">
                 <a style="padding-left:200px; font-size:30px; color:white" href="{{ url('/index') }}">
-                    <b><i> {{ config('Mijn Marktplaats', 'Mijn Marktplaats') }} </i></b>
+                    <b><i> {{ config('Oude Hollandse Spelletjes', 'Oude Hollandse Spelletjes') }} </i></b>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
