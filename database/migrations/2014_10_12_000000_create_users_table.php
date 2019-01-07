@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -15,12 +16,27 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('gebr_naam', 100)->unique();;
+
+            $table->string('voornaam');
+            $table->string('initialen', 10)->nullable();
+            $table->string('tussenv', 10)->nullable();;
+            $table->string('achternaam');
+
+            $table->string('straatnaam')->nullable();;
+            $table->string('huisnr', 10)->nullable();;
+            $table->string('postcode', 10);
+            $table->string('woonplaats');
+
+            $table->string('telefoon', 20)->nullable();;
+            $table->string('mobiel', 20)->nullable();;
+            $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('wachtwoord_sh');
         });
     }
 
