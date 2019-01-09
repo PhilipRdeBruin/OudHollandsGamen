@@ -1,15 +1,15 @@
 
-<div class="row" style="margin:100px auto auto 10%;text-align:center">
-    <h1 class="kl_dgrijs" id="welkom">D&#233; <span class="kl_blauw"><b>Spelletjes</b></span> website 
+<div class="row" style="margin:100px auto auto 20%;text-align:center">
+    <h2 class="kl_dgrijs" id="welkom">D&#233; <span class="kl_blauw"><b>Spelletjes</b></span> website 
         waar je <span class="kl_oranje"><u>m&#233;t</u></span> elkaar en 
         <span class="kl_oranje"><u>tegen</u></span> elkaar<br/>
-        traditionele spelletjes kunt spelen alsof je bijelkaar aan tafel zit.</h1>
+        traditionele spelletjes kunt spelen alsof je bijelkaar aan tafel zit.</h2>
 </div>
 
 <div class="row welkomknoppen">
     <div class="col-md-6">
         <div class="center" style="width:10%">
-            <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/login'">Inloggen<br/>(Ik ben<br/> reeds lid)</button>
+            <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/login'">Inloggen<br/><span class="px-28">(Ik ben<br/> reeds lid)</span></button>
         </div>
     </div>
     <div class="col-md-6">

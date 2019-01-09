@@ -19,9 +19,11 @@
         @endif
 
         @guest
+<!--
             <li class="navbar-item">
                 <span class="nav-link {{ $act_lnk['profiel'] }} disabled" style="color:white">Mijn Profiel</span>
-            </li>            
+            </li>
+-->      
         @else
             <li class="navbar-item">
                 <a href="/profiel" class="nav-link {{ $act_lnk['profiel'] }}" style="color:white">Mijn Profiel</a>
