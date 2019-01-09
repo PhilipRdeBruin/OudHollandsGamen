@@ -7,12 +7,25 @@
     background      : #ddd; 
 }
 
+.center {
+    margin          : auto;
+    width           : 50%;
+}
+
 .kl_blauw {
-    color           : #46d
+    color           : #46d;
+}
+
+.kl_dgrijs {
+    color           : #444;
 }
 
 .kl_grijs {
     color           : #888;
+}
+
+.kl_oranje {
+    color           : #f42;
 }
 
 .px-10 {
