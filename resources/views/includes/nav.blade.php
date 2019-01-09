@@ -11,15 +11,6 @@
     <ul class="navbar-nav ml-auto">
 
         @if($active_navlink == "homepage")
-            
-                <li class="navbar-item">
-                    <select class="form-control" id="filterkey" name="filterkey" onchange="filteraan()"  style="color:white">
-                        <option selected>filter</option>
-                        <option value="optie1">categorie</option>
-                        <option value="optie2">prijs</option>
-                        <option value="optie3">afstand</option>
-                    </select>
-                </li>
             <span class="kl_blauw">xxxxxxxxxxxx</span>
         @else
             <li class="navbar-item">
@@ -29,17 +20,11 @@
 
         @guest
             <li class="navbar-item">
-                <span class="nav-link {{ $act_lnk['plaatsen'] }} disabled">...</span>
-            </li>
-            <li class="navbar-item">
                 <span class="nav-link {{ $act_lnk['profiel'] }} disabled" style="color:white">Mijn Profiel</span>
             </li>            
         @else
             <li class="navbar-item">
-                <a href="/plaatsen" class="nav-link {{ $act_lnk['plaatsen'] }}">...</a>
-            </li>
-            <li class="navbar-item">
-                <a href="/profiel" class="nav-link {{ $act_lnk['profiel'] }}">Mijn Profiel</a>
+                <a href="/profiel" class="nav-link {{ $act_lnk['profiel'] }}" style="color:white">Mijn Profiel</a>
             </li>
         @endif
         <li>
@@ -55,7 +40,7 @@
                     </div>
                 @else
                     <div class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white">
                             {{ Auth::user()->gebr_naam }} <span class="caret"></span>
                         </a>
 
