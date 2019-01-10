@@ -1,7 +1,9 @@
 
 <title>OudHollandGames</title>
 
+
 <meta charset="iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Oud Hollandse Spelletjes">
 <meta name="keywords" content="Oud Hollandse Spelletjes">
 <meta name="author" content="Philip de Bruin, Herger Dillema, Hans van der Poel, Jacomijn Steen">

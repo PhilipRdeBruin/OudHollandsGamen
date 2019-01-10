@@ -19,6 +19,11 @@ Route::get('/keuze', function () {
     return view('keuze');
 });
 
+Route::get('/keuzevrienduitnodiging', function () {
+    return view('keuzevrienduitnodiging');
+});
+
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

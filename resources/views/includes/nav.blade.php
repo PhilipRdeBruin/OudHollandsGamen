@@ -1,14 +1,15 @@
-
+ <nav class="navbar navbar-light navbar-expand-lg navbar-mpl">
+        
 <?php $act_lnk = init_ActiveLinks($active_navlink) ?>
+    <div class="mr-auto"> </div>
+     <a class="navbar-brand mx-auto" id="titel"><b><i>Oud Hollandse Spelletjes</i></b></a>
 
-<h2 id="titel"><b><i>Oud Hollandse Spelletjes</i></b></h2>
 
-<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-    <span class="navbar-toggler-icon"></span>
-</button>
 
-<div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav ml-auto">
+<div class="ml-auto">
+    
+<div class="collapse navbar-collapse " id="navbarCollapse">
+    <ul class="navbar-nav">
 
         @if($active_navlink == "homepage")
             <span class="kl_blauw">xxxxxxxxxxxx</span>
@@ -64,4 +65,10 @@
             <span class="kl_grijscol_grijs" style="margin-right:50px"></span>
         </li>				
     </ul>
+    
+    </div>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+</button>
 </div>
+</nav>
