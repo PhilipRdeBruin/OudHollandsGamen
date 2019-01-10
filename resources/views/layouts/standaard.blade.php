@@ -10,6 +10,7 @@
         <nav class="navbar navbar-light navbar-expand-lg navbar-mpl fixed-top">
             @include('includes.nav')
         </nav>
+        <img src="/afbeeldingen/compilatie1.png" id = "compilatie">
 
         <section class="content">
             @yield('content')
