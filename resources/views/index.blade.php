@@ -6,5 +6,5 @@
 
 @extends('layouts.standaard')
 @section('content')
-    @include('includes.home') 
+    @include('includes.welkom') 
 @endsection
