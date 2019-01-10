@@ -19,6 +19,10 @@ Route::get('/keuze', function () {
     return view('keuze');
 });
 
+Route::get('/spelkeuze', function () {
+    return view('spelkeuze');
+});
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
