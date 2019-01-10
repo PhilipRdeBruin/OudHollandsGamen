@@ -58,6 +58,13 @@
     text-align      : center; 
 }
 
+.div-spel {
+    float           : left;
+    margin          : 10px;
+    padding         : 10px;
+/*    border          : 1px solid grey;   */
+}
+
 .droplist-mpl:hover {
     color           : white;
     background      : #46d;
@@ -80,11 +87,11 @@
 }
 
 .knop-inlog {
-    margin-top      : 50px;
+    margin-top      : 60px;
     font-size       : 32px;
     font-weight     : bold; 
-    height          : 250px;
-    width           : 250px;
+    height          : 200px;
+    width           : 200px;
     border          : 1px solid #007bff;
     border-radius   : 50px;
     cursor          : pointer;
@@ -103,7 +110,26 @@
     border          : 1px solid #007bff;
     border-radius   : 7px;
 }
- 
+
+.img-spel {
+    width           : 100%;
+    height          : auto;
+}
+
+.knop-spel {
+    width           : 200px;
+    height          : 200px;
+    cursor          : pointer;
+}
+
+.label-spel {
+    width           : 100%;
+    color           : white;
+    background      : #46d;
+    font-weight     : bold;
+    text-align      : center;
+}
+
 .navbar-mpl {
     color           : white;
     background      : #46d;
@@ -192,7 +218,7 @@
 }
 
 #hulpinfo {
-    margin-top      : 40px;
+    margin-top      : 60px;
     font-size       : 24px;
     color           : #028;
     text-wrap       : normal;
@@ -211,6 +237,11 @@
 #overzichtstabel {
     max-height      : 200px;
     overflow        : auto;
+}
+
+#spel-pagina {
+    margin-top      : 100px;
+    margin-left     : 7.5%;
 }
 
 #titel {
