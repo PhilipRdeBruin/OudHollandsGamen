@@ -14,5 +14,6 @@
 <link rel = "stylesheet" href = "{{ asset('css/algemeen.css') }}"/>
 <link rel = "stylesheet" href = "{{ asset('css/ohgames.css') }}"/>
 <link rel = "stylesheet" href = "{{ asset('css/footer.css') }}"/>
+<link rel = "stylesheet" href = "{{ asset('css/keuze.css') }}"/>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/functions/php_functies.php'); ?>
