@@ -13,11 +13,15 @@
 </div>
 <div class="row">
     <div class = "col-6">
-        <a href = "spelkeuze.blade.php"><h1>Klik op deze woorden als u een spel wilt spelen</h1></a>
+        <a href = "{{ route('spelkeuze') }}"><h1>Klik op deze woorden als u een spel wilt spelen</h1></a>
     </div>
     <div class = "col-6">
-        <a href = "keuzevrienduitnodiging.blade.php"><h1>Klik op deze woorden als u iemand wilt uitnodigen om met u te spelen</h1></a>
+        <a href = "{{ route('keuzevrienduitnodiging) }}"><h1>Klik op deze woorden als u iemand wilt uitnodigen om met u te spelen</h1></a>
     </div>
+</div>
+
+<div class = "profiellink">
+    <a href = "{{ route(profiel) }}"><h4>Klik hier om naar uw eigen profielpagina te gaan</h4></a>
 </div>
     
 @endsection
