@@ -1,7 +1,6 @@
 
 <?php 
     $active_navlink = 'homepage';
-
     $spelletjes = App\Spelletje::All();
 ?>
 
@@ -17,6 +16,9 @@
                 <p class="label-spel">{{ $spelletje->spel_naam }}</p>
             </div>
         @endforeach
+    </div>
+    <div style="clear:left;margin-top:100px;color:white">
+        <p>x</p>
     </div>
     
 @endsection
