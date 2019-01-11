@@ -13,11 +13,15 @@
 </div>
 <div class="row">
     <div class = "col-6">
-        <a href = "spellen.blade.php"><h1>Klik op deze woorden als u een spel wilt spelen</h1></a>
+        <a href = "/spelkeuze"><h1>Klik op deze woorden als u een spel wilt spelen</h1></a>
     </div>
     <div class = "col-6">
-        <a href = "spellen.blade.php"><h1>Klik op deze woorden als u iemand wilt uitnodigen om met u te spelen</h1></a>
+        <a href = "/keuzevrienduitnodiging"><h1>Klik op deze woorden als u iemand wilt uitnodigen om met u te spelen</h1></a>
     </div>
+</div>
+
+<div class = "profiellink">
+    <a href = "/profiel"><h1>Klik hier om naar uw eigen profielpagina te gaan</h1></a>
 </div>
     
 @endsection

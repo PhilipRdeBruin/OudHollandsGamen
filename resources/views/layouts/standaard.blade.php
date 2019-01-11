@@ -7,16 +7,11 @@
     </head>
 
 	<body>
-<<<<<<< HEAD
         @include('includes.nav')
         
-=======
-        <nav class="navbar navbar-light navbar-expand-lg navbar-mpl fixed-top">
-            @include('includes.nav')
-        </nav>
-        <img src="/afbeeldingen/compilatie1.png" id = "compilatie">
 
->>>>>>> 76cf5e8dfa26f019ccc0bee892e68a9f5f90a500
+        <!--<img src="/afbeeldingen/compilatie1.png" id = "compilatie">-->
+
         <section class="content">
             @yield('content')
             <style>.card {
@@ -25,11 +20,7 @@
             </style>    
         </section>
 
-<!--
-        <footer class="footer">
-		    @include('includes.footer')
-        </footer>
--->
+
 
         @include('includes.scriptsrcs')
 	</body>

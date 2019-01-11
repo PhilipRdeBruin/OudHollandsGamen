@@ -23,13 +23,23 @@ Route::get('/keuzevrienduitnodiging', function () {
     return view('keuzevrienduitnodiging');
 });
 
-
 Route::get('/spelkeuze', function () {
     return view('spelkeuze');
 });
+Route::get('/profiel', function () {
+    return view('profiel');
+});
+
+
 
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('spelkeuze', ['as' => 'spelkeuze','uses'=>'KeuzeController@spelkeuze']);
+
+Route::get('keuzevrienduitnodiging', ['as' => 'keuzevrienduitnodiging','uses'=>'KeuzeController@keuzevrienduitnodiging']);
+
+Route::get('profiel', ['as' => 'profiel','uses'=>'KeuzeController@profiel']);
