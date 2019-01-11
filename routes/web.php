@@ -19,10 +19,6 @@ Route::get('/keuze', function () {
    return view('keuze');
 });
 
-Route::get('/spelkeuze', function () {
-   return view('spelkeuze');
-});
-
 Route::get('/keuzevrienduitnodiging', function () {
    return view('keuzevrienduitnodiging');
 });
@@ -31,6 +27,10 @@ Route::get('/profiel', function () {
    return view('profiel');
 });
 
+
+Route::get('/spelkeuze', function () {
+    return view('spelkeuze');
+});
 
 Auth::routes();
 
