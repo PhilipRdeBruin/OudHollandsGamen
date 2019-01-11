@@ -1,7 +1,6 @@
 
 <?php 
     $active_navlink = 'homepage';
-
     $spelletjes = App\Spelletje::All();
 ?>
 
@@ -24,6 +23,9 @@
             
         </div>
  
+    </div>
+    <div style="clear:left;margin-top:100px;color:white">
+        <p>x</p>
     </div>
     
 @endsection

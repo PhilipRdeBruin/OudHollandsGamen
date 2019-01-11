@@ -46,11 +46,6 @@
     </div>
     </div>
 
-<div class="container col-md-4">
-<div class="row center" id="hulpinfo">
-    <div id="hulptekst" style="margin-top:25px">Kunnen we u helpen</div>
-    <img src="{{ asset('icons/help-icon.png') }}" alt="HULP-knop" height="100px">
-    </div>
   
 
 @endsection

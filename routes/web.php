@@ -25,9 +25,14 @@ Route::get('/profiel', function () {
 
 
 
+Route::get('/vraag', function () {
+    return view('includes/vraag');
+});
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
@@ -38,3 +43,4 @@ Route::get('profiel', 'KeuzeController@profiel')->name('profiel');
 Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
 
 Route::get('spel/{id}', 'SpelController@spel')->name('spel');
+

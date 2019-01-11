@@ -7,6 +7,8 @@
 
 @section('content')
 
+<!--    <img src="/afbeeldingen/compilatie1.png" id = "compilatie">   -->
+
     <div class="row" style="margin:100px auto auto 20%;text-align:center">
         <h2 class="kl_dgrijs" id="welkom">D&#233; <span class="kl_blauw"><b>Spelletjes</b></span> website 
             waar je <span class="kl_oranje"><u>m&#233;t</u></span> elkaar en 

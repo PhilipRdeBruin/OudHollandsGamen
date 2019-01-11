@@ -78,10 +78,5 @@
         </main>
     </div>
 
-    <footer class="footer">
-        @include('includes.head')
-        @include('includes.footer')
-    </footer>
-
 </body>
 </html>
