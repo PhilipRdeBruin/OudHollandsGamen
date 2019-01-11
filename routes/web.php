@@ -32,8 +32,12 @@ Route::get('/spelkeuze', function () {
     return view('spelkeuze');
 });
 
+Route::get('/vraag', function () {
+    return view('includes/vraag');
+});
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');

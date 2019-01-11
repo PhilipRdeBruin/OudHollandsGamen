@@ -7,20 +7,14 @@
    </head>
 
     <body>
-    
-           @include('includes.nav')
-<!--        <img src="/afbeeldingen/compilatie1.png" id = "compilatie">  -->
+        @include('includes.nav')
 
-       <section class="content">
-           @yield('content')
-       </section>
+        <section class="content">
+            @yield('content')
+        </section>
+        
+        @include('includes.vraag')
 
-<!--
-       <footer class="footer">
-            @include('includes.footer')
-       </footer>
--->
-
-       @include('includes.scriptsrcs')
+        @include('includes.scriptsrcs')
     </body>
 </html>

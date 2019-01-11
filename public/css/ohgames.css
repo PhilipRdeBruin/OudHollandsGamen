@@ -223,7 +223,12 @@
     color           : #028;
     text-wrap       : normal;
 }
-
+.hulpinfo {
+    margin-top      : 60px;
+    font-size       : 24px;
+    color           : #028;
+    text-wrap       : normal;
+}
 #hulptekst {
     float           : left;
     margin-top      : 10px;

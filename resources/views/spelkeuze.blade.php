@@ -8,6 +8,7 @@
 @extends('layouts.standaard')
 @section('content')
 
+<div>
     <div id="spel-pagina">
         @foreach ($spelletjes as $spelletje)
             <div class="card-body div-spel">
@@ -17,6 +18,7 @@
                 <p class="label-spel">{{ $spelletje->spel_naam }}</p>
             </div>
         @endforeach
+    </div>
     </div>
     
 @endsection
