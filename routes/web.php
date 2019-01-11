@@ -12,27 +12,28 @@
 */
 
 Route::get('/index', function () {
-    return view('index');
+   return view('index');
 });
 
 Route::get('/keuze', function () {
-    return view('keuze');
+   return view('keuze');
 });
 
-<<<<<<< HEAD
-Route::get('/keuzevrienduitnodiging', function () {
-    return view('keuzevrienduitnodiging');
-});
-
-
-=======
 Route::get('/spelkeuze', function () {
-    return view('spelkeuze');
+   return view('spelkeuze');
 });
 
->>>>>>> 76cf5e8dfa26f019ccc0bee892e68a9f5f90a500
+Route::get('/keuzevrienduitnodiging', function () {
+   return view('keuzevrienduitnodiging');
+});
+
+Route::get('/profiel', function () {
+   return view('profiel');
+});
+
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

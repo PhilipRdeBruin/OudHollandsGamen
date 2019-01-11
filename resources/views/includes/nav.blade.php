@@ -30,9 +30,7 @@
                 <a href="/profiel" class="nav-link {{ $act_lnk['profiel'] }}" style="color:white">Mijn Profiel</a>
             </li>
         @endif
-        <li>
-            <span class="kl_grijs">&nbsp;&nbsp;<sub>||</sub>&nbsp;&nbsp;</span>
-        </li>
+
         <li class="navbar-item btn-group">
                 @guest
                     <a href="#" class="nav-link dropdown-toggle {{ $act_lnk['login'] }}" data-toggle="dropdown" style="color:white">Inloggen</a>

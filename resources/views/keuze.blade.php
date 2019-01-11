@@ -13,10 +13,10 @@
 </div>
 <div class="row">
     <div class = "col-6">
-        <a href = "spellen.blade.php"><h1>Klik op deze woorden als u een spel wilt spelen</h1></a>
+        <a href = "spelkeuze.blade.php"><h1>Klik op deze woorden als u een spel wilt spelen</h1></a>
     </div>
     <div class = "col-6">
-        <a href = "spellen.blade.php"><h1>Klik op deze woorden als u iemand wilt uitnodigen om met u te spelen</h1></a>
+        <a href = "keuzevrienduitnodiging.blade.php"><h1>Klik op deze woorden als u iemand wilt uitnodigen om met u te spelen</h1></a>
     </div>
 </div>
     
