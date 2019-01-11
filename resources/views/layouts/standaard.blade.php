@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 
-    <head>
-	    @include('includes.head')
-    </head>
+   <head>
+        @include('includes.head')
+   </head>
 
 	<body>
         @include('includes.nav')
@@ -14,14 +14,15 @@
 
         <section class="content">
             @yield('content')
-            <style>.card {
-            margin-bottom:15px;
+            <style>
+            .card {
+                margin-bottom:15px;
             }
             </style>    
         </section>
 
 
 
-        @include('includes.scriptsrcs')
-	</body>
+       @include('includes.scriptsrcs')
+    </body>
 </html>

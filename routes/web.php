@@ -12,22 +12,15 @@
 */
 
 Route::get('/index', function () {
-    return view('index');
+   return view('index');
 });
 
 Route::get('/keuze', function () {
-    return view('keuze');
+   return view('keuze');
 });
 
-Route::get('/keuzevrienduitnodiging', function () {
-    return view('keuzevrienduitnodiging');
-});
-
-Route::get('/spelkeuze', function () {
-    return view('spelkeuze');
-});
 Route::get('/profiel', function () {
-    return view('profiel');
+   return view('profiel');
 });
 
 
@@ -38,8 +31,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('spelkeuze', ['as' => 'spelkeuze','uses'=>'KeuzeController@spelkeuze']);
-
-Route::get('keuzevrienduitnodiging', ['as' => 'keuzevrienduitnodiging','uses'=>'KeuzeController@keuzevrienduitnodiging']);
-
-Route::get('profiel', ['as' => 'profiel','uses'=>'KeuzeController@profiel']);
+Route::get('spelkeuze', 'KeuzeController@spelkeuze')->name('spelkeuze');
+Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->name('keuzevrienduitnodiging');
+Route::get('profiel', 'KeuzeController@profiel')->name('profiel');
