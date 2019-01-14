@@ -18,11 +18,6 @@
             </div>
         @endforeach
     </div>
-<<<<<<< HEAD
-    <div style="clear:left;margin-top:100px;color:white">
-        <p>x</p>
-=======
->>>>>>> bf2b93ea8b678f5236d9e2e15f4452b11f020d23
-    </div>
+</div>
     
 @endsection
