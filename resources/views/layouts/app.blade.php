@@ -21,6 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<!--    @include('includes.nav')-->
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel"  style="background:#46d">
             <div class="container">
@@ -39,7 +40,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                         Authentication Links 
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" style="color:white" href="{{ route('login') }}">{{ __('Login') }}</a>

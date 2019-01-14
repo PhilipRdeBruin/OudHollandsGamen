@@ -1,5 +1,7 @@
  <nav class="navbar navbar-light navbar-expand-lg navbar-mpl">
-        
+@if(empty($active_navlink))
+     <?php $active_navlink = ""; //TODO: refactor active links ?>
+@endif
 <?php $act_lnk = init_ActiveLinks($active_navlink) ?>
     <div class="mr-auto"> </div>
      <a class="navbar-brand mx-auto" id="titel"><b><i>Oud Hollandse Spelletjes</i></b></a>
@@ -23,12 +25,6 @@
             <li class="navbar-item">
                 <span class="nav-link {{ $act_lnk['profiel'] }} disabled" style="color:white">Mijn Profiel</span>
             </li>
-        @else
-<!--
-            <li class="navbar-item">
-                <a href="/profiel" class="nav-link {{ $act_lnk['profiel'] }}" style="color:white">Mijn Profiel</a>
-            </li>
--->
         @endif
 
         <li class="navbar-item btn-group">
