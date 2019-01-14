@@ -26,7 +26,8 @@ Route::get('/index', function () {
  Route::get('/vraag', function () {
     return view('includes/vraag');
  });
- 
+
+ /*
  Auth::routes();
  
  Route::get('logout', 'Auth/LoginController@logout');
@@ -37,3 +38,22 @@ Route::get('/index', function () {
  Route::get('spelkeuze', 'KeuzeController@spelkeuze')->name('spelkeuze');
  Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->name('keuzevrienduitnodiging');
  Route::get('profiel', 'KeuzeController@profiel')->name('profiel');
+=======
+});
+*/
+
+Auth::routes();
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('spelkeuze', 'KeuzeController@spelkeuze')->name('spelkeuze');
+Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->name('keuzevrienduitnodiging');
+Route::get('profiel', 'KeuzeController@profiel')->name('profiel');
+
+Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
+
+Route::get('spel/{id}', 'SpelController@spel')->name('spel');
+
