@@ -8,4 +8,5 @@
 
 Spelletje {{ $spelletje->id }}
 
+@include('includes.vraag')
 @endsection
