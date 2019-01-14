@@ -15,20 +15,20 @@
             <span class="kl_blauw">xxxxxxxxxxxx</span>
         @else
             <li class="navbar-item">
-                <a href="/index" class="nav-link {{ $act_lnk['homepage'] }}" style="color:white">Startpagina</a>
+                <a href="/keuze" class="nav-link {{ $act_lnk['homepage'] }}" style="color:white">Startpagina</a>
             </li>
         @endif
 
         @guest
-<!--
             <li class="navbar-item">
                 <span class="nav-link {{ $act_lnk['profiel'] }} disabled" style="color:white">Mijn Profiel</span>
             </li>
--->      
         @else
+<!--
             <li class="navbar-item">
                 <a href="/profiel" class="nav-link {{ $act_lnk['profiel'] }}" style="color:white">Mijn Profiel</a>
             </li>
+-->
         @endif
 
         <li class="navbar-item btn-group">
