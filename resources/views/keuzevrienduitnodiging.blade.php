@@ -97,6 +97,6 @@
     </div>
 </div>
 
-
+@include('includes.vraag')
 
 @endsection
