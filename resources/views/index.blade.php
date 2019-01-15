@@ -20,8 +20,8 @@
         <div class="col-md-2"> </div>
     </div>
 
-
-    <div class="row justify-content-center mt-3"> 
+    <div class="row justify-content-center mt-3">
+        
     <div class="row welkomknoppen">
         <div class="col-md-4">
                 <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/login'">Inloggen<br/><span class="px-28">(Ik ben<br/> reeds lid)</span></button>

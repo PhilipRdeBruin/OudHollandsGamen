@@ -1,14 +1,15 @@
 
 <?php 
-    $active_navlink = 'homepage'; 
+//    $active_navlink = 'homepage'; 
 ?>
 
 @extends('layouts.standaard')
 @section('content')
-    
-<div class="row welkomknoppen">
-        <div class="col-md-6">
-            <div class="center" style="width:15%">
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="row welkomknoppen">
+        <div class="col-md-4">
                 <button type="button" class="knop-mpl knop-keuze" onclick="document.location='/keuzevrienduitnodiging'">
                     Ik wil <u><i>eerst</i></u> iemand<br/>
                     <span class="px-24"><i>(of meerdere personen)</i></span>
@@ -18,9 +19,8 @@
                     En daarna kiezen we er een spel bij
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="center" style="width:80%">
+            <div class="col-md-4"> </div>   
+        <div class="col-md-4">
                 <button class="knop-mpl knop-keuze" onclick="document.location='/spelkeuze'">
                     Ik wil <u><i>eerst</i></u> een spel kiezen
                 </button>
@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+</div>
     @include('includes.vraag')
 @endsection
 
