@@ -15,13 +15,13 @@ Route::get('/index', function () {
    return view('index');
  });
  
- Route::get('/keuze', function () {
-   return view('keuze');
- });
+//  Route::get('/keuze', function () {
+//    return view('keuze', ['naam'=>'keuze']);
+//  });
  
- Route::get('/profiel', function () {
-   return view('profiel');
- });
+//  Route::get('/profiel', function () {
+//    return view('profiel', ['naam'=>'profiel']);
+//  });
      
  Route::get('/vraag', function () {
     return view('includes/vraag');
@@ -33,6 +33,8 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('keuze', 'KeuzeController@keuze')->name('keuze');
 
 Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->name('keuzevrienduitnodiging');
      
