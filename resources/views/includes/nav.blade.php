@@ -12,18 +12,22 @@
     
 <div class="collapse navbar-collapse " id="navbarCollapse">
     <ul class="navbar-nav">
+        
 
-        @if($active_navlink == "homepage")
+        @if($active_navlink == "notnav")
             <span class="kl_blauw">xxxxxxxxxxxx</span>
         @else
             <li class="navbar-item">
-                <a href="/keuze" class="nav-link {{ $act_lnk['homepage'] }}" style="color:white">Startpagina</a>
+                <a href="/keuze" class="nav-link {{ $act_lnk['login'] }}" 
+                style="color:white">Startpagina</a>
             </li>
         @endif
 
-        @guest
+         @if($active_navlink == "notnav")
+            <span class="kl_blauw">xxxxxxxxxxxx</span>
+         @else
             <li class="navbar-item">
-                <span class="nav-link {{ $act_lnk['profiel'] }} disabled" style="color:white">Mijn Profiel</span>
+                <a href="/profiel" class="nav-link {{ $act_lnk['login'] }}"style="color:white">Mijn Profiel</a>
             </li>
         @endif
 

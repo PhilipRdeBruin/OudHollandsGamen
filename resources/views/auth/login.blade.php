@@ -1,13 +1,15 @@
 
+<?php $active_navlink = "notnav" ?>
+
 @extends('layouts.standaard')
 
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
         <div class="col-md-8">
             <div class="card" style="background:#eee">
-                <div class="card-header card-header-mpl cardhdr-pos">{{ __('Login') }}</div>
+                <div class="card-header card-header-mpl cardhdr-pos">{{ __('Inloggen') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -56,7 +58,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Inlogggen') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
