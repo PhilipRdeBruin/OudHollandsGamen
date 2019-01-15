@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<!--    @include('includes.nav')-->
+    @include('includes.nav')
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel"  style="background:#46d">
             <div class="container">

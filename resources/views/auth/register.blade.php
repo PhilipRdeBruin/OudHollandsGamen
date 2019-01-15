@@ -1,12 +1,13 @@
+<?php $active_navlink = "notnav" ?>
 
 @extends('layouts.standaard')
 
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header card-header-mpl cardhdr-pos">{{ __('Registeren') }}</div>
 
                 <div class="card-body" style="background:#eee">

@@ -6,20 +6,20 @@
 @extends('layouts.standaard')
 @section('content')
 
-<div class="container col-md-4">
-<div class="row" style="text-align:center">
+<div class="conainer">
+       <div class="row justify-content-center mt-5">
+        <div class="col-md-6" style="text-align:center">
     <h1><span class="kl_blauw">Kennis uitnodigen</span></h1><br>
-    <h4 style="text-align:left"> U heeft gekozen om een kennis uit te nodigen.<br> Hieronder ziet u overzicht van u vrienden die u kunt uitnodigen.</h4>
-    <br>
-    <h4 style="text-align:left"> LET OP! Hieronder ziet uw alleen de vrienden die op dit moment online zijn.</h4>
-   
+    <h4> U heeft gekozen om een kennis uit te nodigen.<br> Hieronder ziet u overzicht van u vrienden die u kunt uitnodigen.</h4>
+    <h4> LET OP! Hieronder ziet uw alleen de vrienden die op dit moment online zijn.</h4>
+        <div class="col-md-2"> </div>
     </div>
-</div>
+    </div>
+    </div>
 <br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-3">
+            <div class="card mt-3">
                 <div class="card-header">Naam</div>
                     <div class="card-body">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -30,8 +30,8 @@
             </div>
         </div>
                     
-         <div class="col-md-4">
-            <div class="card">
+         <div class="col-md-3">
+            <div class="card mt-3">
                 <div class="card-header">Naam</div>
                     <div class="card-body">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -42,8 +42,8 @@
             </div>
         </div>
 
-     <div class="col-md-4">
-            <div class="card">
+     <div class="col-md-3">
+            <div class="card mt-3">
                 <div class="card-header">Naam</div>
                     <div class="card-body">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -54,13 +54,11 @@
             </div>
         </div>
     </div>
-</div>
 
-<br>
-<div class="container">            
+<br>          
     <div class="row justify-content-center">
-           <div class="col-md-4">
-            <div class="card">
+           <div class="col-md-3">
+            <div class="card mt-3">
                 <div class="card-header">Naam</div>
                     <div class="card-body">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -71,8 +69,8 @@
             </div>
         </div>
                     
-          <div class="col-md-4">
-            <div class="card">
+          <div class="col-md-3">
+            <div class="card mt-3">
                 <div class="card-header">Naam</div>
                     <div class="card-body">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -83,8 +81,8 @@
             </div>
         </div>
         
-           <div class="col-md-4">
-            <div class="card">
+           <div class="col-md-3">
+            <div class="card mt-3">
                 <div class="card-header">Naam</div>
                     <div class="card-body">
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -95,7 +93,8 @@
             </div>
         </div>
     </div>
-</div>
+
+
 
 @include('includes.vraag')
 
