@@ -1,6 +1,8 @@
 <?php 
+    namespace App\Http\Controllers;
     $active_navlink = 'profiel'; 
     $filterkey = "filter";
+    $vrienden = \App\User::All();
 ?>
 
 @extends('layouts.standaard')
@@ -16,8 +18,8 @@
           <div class="container col-md-8" style="text-align:center">
     <h4>Hier onder vindt u een overzicht van uw persoonlijke gegevens. Daarnaast een lijst van uw kennissen waarmee u spellen kunt spelen.</h4>
     </div>
-</div>
-<br>
+    </div>
+    
     <div class="row justify-content-center">
             <div class="col-md-5">
         <div class="card mt-4">
@@ -27,7 +29,10 @@
          </div>
                 </div>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/vriendtoevoegen'">Vriend toevoegen<br/><span class="px-14"></span></button>
+</div>
+    
             <div class="col-md-3">
                 <div class="card mt-4">
                 <div class="card-header">kennis</div>
@@ -38,8 +43,8 @@
                 </div>
                 <a href="#" class="btn btn-primary">Spelen</a>
             </div>
+        </div>     
                     
-    </div>
     </div>
     </div>
 
