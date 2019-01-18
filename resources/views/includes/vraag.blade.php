@@ -26,5 +26,5 @@ function vraagTekst() {
     x.style.display = "none";
   }
 }
-</script> 
+</script>
 @endif
