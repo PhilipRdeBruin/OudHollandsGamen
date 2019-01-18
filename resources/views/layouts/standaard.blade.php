@@ -14,7 +14,7 @@
         </section>
         
        
-
+@include('includes.vraag')    
         @include('includes.scriptsrcs')
     </body>
 </html>

@@ -1,3 +1,4 @@
+@if(!empty ($vrtekst)
 <br>
 <div>
     <button onclick="vraagTekst()">
@@ -27,3 +28,4 @@ function vraagTekst() {
 }
 
 </script> 
+@endif

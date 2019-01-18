@@ -44,5 +44,5 @@
     </div>
 
   
-    @include('includes.vraag')
+   
 @endsection
