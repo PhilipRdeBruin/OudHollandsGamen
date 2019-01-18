@@ -35,9 +35,19 @@
     
             <div class="col-md-3">
                 <div class="card mt-4">
-                <div class="card-header">kennis</div>
+                <div class="card-header">  
+            <select name="vrienden">
+                        @foreach($gebruiker->vrienden as $vriend)
+                        <option>{{ $vriend->voornaam }} {{ $vriend->achternaam }} </option>
+                        @endforeach
+                         </select>   
+                    </div>
+    
                     <div class="card-body">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+                      
+                        
+                    </div>
+    
                     <div class="card-img-overlay">
                     </div> 
                 </div>
@@ -46,7 +56,7 @@
         </div>     
                     
     </div>
-    </div>
+  
 
   
     @include('includes.vraag')

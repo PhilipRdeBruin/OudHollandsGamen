@@ -1,9 +1,4 @@
-<?php 
-    namespace App\Http\Controllers;
-    $active_navlink = 'profiel'; 
-    $filterkey = "filter";
-    $vrienden = \App\User::All();
-?>
+
 
 @extends('layouts.standaard')
 @section('content')
@@ -26,23 +21,28 @@
          <div class="card-header" style="text-align:center"><b>Vriend toevoegen</b></div>
          <div class="card-body">
              <div class="row justify-content-center">
-             <select> 
-    @foreach ($vrienden as $vrienden)
+             <form method="POST" action="/vriendentoevoegen"> 
+                @csrf
+                 <select name="vriend">
+    @foreach ($users as $user)
            <?php 
-           $vn=$vrienden->voornaam;
-           $tv=($vrienden->tussenv != NULL) ? " " . $vrienden->tussenv : "" ;
-           $an=$vrienden->achternaam;
+           $vn=$user->voornaam;
+           $tv=($user->tussenv != NULL) ? " " . $user->tussenv : "" ;
+           $an=$user->achternaam;
            $vriend=$vn.$tv. " " . $an;
            
            ?>
-            <option> {{$vriend}} </option>  
+            <option value="{{$user->id}}">{{$vriend}}</option>  
     @endforeach
     
                 </select>
-                 </div>
+               
               <div class="row justify-content-center mt-2">
               <input type="submit" value="Toevoegen" class="btn btn-primary">
-             </div>
+                 
+                 </div>
+                  </form>
+               </div>
              
          </div>
             </div>
