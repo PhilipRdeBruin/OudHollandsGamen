@@ -35,16 +35,16 @@
     
             <div class="col-md-3">
                 <div class="card mt-4">
-                <div class="card-header">  
-            <select name="vrienden">
-                        @foreach($gebruiker->vrienden as $vriend)
-                        <option>{{ $vriend->voornaam }} {{ $vriend->achternaam }} </option>
-                        @endforeach
-                         </select>   
+                    <div class="card-header" style="text-align:center"><b>Vrienden</b>
+                        
                     </div>
     
                     <div class="card-body">
-                      
+                      <select>
+                        @foreach($gebruiker->vrienden as $vriend)
+                        <option> {{$vriend->voornaam }} {{$vriend->tussenv}} {{$vriend->achternaam}}</option>
+                        @endforeach
+                    </select>   
                         
                     </div>
     
