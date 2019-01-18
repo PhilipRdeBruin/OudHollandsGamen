@@ -13,8 +13,10 @@
             @yield('content')
         </section>
         
-       
-@include('includes.vraag')    
+        @if(!empty($vrtekst))
+            @include('includes.vraag')
+        @endif
+
         @include('includes.scriptsrcs')
     </body>
 </html>

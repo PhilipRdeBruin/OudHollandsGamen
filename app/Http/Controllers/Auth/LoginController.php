@@ -41,8 +41,11 @@ class LoginController extends Controller
     /*
     public function username() {
         return 'gebr_naam';
-    }
-    */
+    }*/
+        
+       
+    
+    
     
     public function logout(Request $request) {
         Auth::logout();

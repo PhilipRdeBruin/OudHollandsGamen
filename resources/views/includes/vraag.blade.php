@@ -1,4 +1,4 @@
-@if(!empty ($vrtekst)
+@if(!empty ($vrtekst))
 <br>
 <div>
     <button onclick="vraagTekst()">

@@ -20,16 +20,16 @@ class CreateUsersTable extends Migration
 
             $table->string('voornaam');
             $table->string('initialen', 10)->nullable();
-            $table->string('tussenv', 10)->nullable();;
+            $table->string('tussenv', 10)->nullable();
             $table->string('achternaam');
 
-            $table->string('straatnaam')->nullable();;
-            $table->string('huisnr', 10)->nullable();;
-            $table->string('postcode', 10);
-            $table->string('woonplaats');
+            $table->string('straatnaam')->nullable();
+            $table->string('huisnr', 10)->nullable();
+            $table->string('postcode', 10)->nullable();
+            $table->string('woonplaats')->nullable();
 
-            $table->string('telefoon', 20)->nullable();;
-            $table->string('mobiel', 20)->nullable();;
+            $table->string('telefoon', 20)->nullable();
+            $table->string('mobiel', 20)->nullable();
             $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
 

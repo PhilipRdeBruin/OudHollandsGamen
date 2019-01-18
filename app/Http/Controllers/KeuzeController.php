@@ -8,10 +8,7 @@ use DB;
 class KeuzeController extends Controller
 {
     public function keuze(){
-
-        
         $vrtekst = DB::table('vraagtekens')->where('naam', 'keuze')->value('vrtekst');   
-
         return view('keuze', ['vrtekst' => $vrtekst]);
     }
 

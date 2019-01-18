@@ -18,7 +18,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Gebruikersnaam') }}<super> *</super></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" style="color:#46f; font-weight:bold" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" style="color:#46f; font-weight:bold" name="gebr_naam" value="{{ old('gebr_naam') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
@@ -42,19 +42,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="initialen" class="col-md-4 col-form-label text-md-right">{{ __('Initialen') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="initialen" type="text" class="form-control{{ $errors->has('initialen') ? ' is-invalid' : '' }}" name="initialen" value="{{ old('initialen') }}">
-
-                                @if ($errors->has('initialen'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('initialen') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group row">
                             <label for="tussenv" class="col-md-4 col-form-label text-md-right">{{ __('Tussenvoegsel') }}</label>
@@ -84,7 +72,7 @@
                             </div>
                         </div>
                         <hr/ style="width:75%">
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="straatnaam" class="col-md-4 col-form-label text-md-right">{{ __('Straatnaam') }}</label>
 
                             <div class="col-md-6">
@@ -96,9 +84,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="huisnummer" class="col-md-4 col-form-label text-md-right">{{ __('Huisnummer') }}</label>
 
                             <div class="col-md-6">
@@ -110,9 +98,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}<super> *</super></label>
 
                             <div class="col-md-6">
@@ -124,9 +112,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="woonplaats" class="col-md-4 col-form-label text-md-right">{{ __('Woonplaats') }}<super> *</super></label>
 
                             <div class="col-md-6">
@@ -138,9 +126,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
                         <hr/ style="width:75%">
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="telefoon" class="col-md-4 col-form-label text-md-right">{{ __('Telefoon-nummer') }}</label>
 
                             <div class="col-md-6">
@@ -152,9 +140,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="mobielnr" class="col-md-4 col-form-label text-md-right">{{ __('Mobiel-nummer') }}</label>
 
                             <div class="col-md-6">
@@ -166,7 +154,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Adres') }}<super> *</super></label>

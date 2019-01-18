@@ -31,17 +31,5 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-    * de gebruiker waaronder de advertentie valt
-    */
-    public function advertenties() {
-        return $this->hasMany('App\Advertentie', 'verkoper_id');
-    }
-
-    /**
-    * de gebruiker waaronder de bieding valt
-    */
-    public function biedingen() {
-        return $this->hasMany('App\Bieding', 'koper_id');
-    }
+    
 }
