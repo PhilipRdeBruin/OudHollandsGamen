@@ -37,10 +37,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('keuze', 'KeuzeController@keuze')->name('keuze');
 
 Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->name('keuzevrienduitnodiging');
-     
-Route::get('profiel', 'KeuzeController@profiel')->name('profiel');
 
 Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
 
 Route::get('spel/{id}', 'SpelController@spel')->name('spel');
+
+Route::group(['middleware' => ['auth']], function() {
+   Route::get('profiel', 'ProfielController@profiel')->name('profiel');
+   Route::put('/profiel', 'ProfielController@update')->name('profiel.update');
+   
+});
+
+Route::post('profiel/{id}', 'SpelController@spel');
 

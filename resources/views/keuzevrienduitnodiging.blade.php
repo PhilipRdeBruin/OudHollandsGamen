@@ -96,6 +96,6 @@
 
 
 
-@include('includes.vraag')
+
 
 @endsection

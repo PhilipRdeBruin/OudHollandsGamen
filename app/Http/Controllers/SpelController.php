@@ -24,10 +24,8 @@ class SpelController extends Controller
 
             return view('spel', ['spelletje' => $spelletje, 'vrtekst' => $vrtekst]);
 
-            //return view('spel')->with('vrtekst',$vrtekst)->with('spelletje',$spelletje);
-
-            //return view('spel')->with(compact('vrtekst','spelletje'));
             
-            }
+            
+        }
 
 }
