@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function biedingen() {
         return $this->hasMany('App\Bieding', 'koper_id');
     }
+    
+    public function vrienden() {
+        return $this->belongsToMany('App\User', 'users_relations', 'gebruiker', 'vriend');
+    }
 }

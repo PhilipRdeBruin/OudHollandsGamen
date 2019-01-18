@@ -26,6 +26,7 @@ Route::get('/index', function () {
  Route::get('/vraag', function () {
     return view('includes/vraag');
  });
+ Route::get('/vriendtoevoegen', 'User_RelationController@vrienden');
 
 
 Auth::routes();
@@ -40,7 +41,10 @@ Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->
      
 Route::get('profiel', 'KeuzeController@profiel')->name('profiel');
 
+Route::get('profiel', 'KeuzeController@profiel1')->name('profiel1');
+
 Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
 
 Route::get('spel/{id}', 'SpelController@spel')->name('spel');
 
+Route::post('vriendentoevoegen', 'User_RelationController@vriendtoevoegen');
