@@ -22,16 +22,16 @@
         </div>
     <br>
 
-    <div class="row justify-content-around" id = "profielweergave">
-        <div class="col-sm-10">
+    <div class="row justify-content-center" id = "profielweergave">
+        <div class="col-md-5">
+            <div class="row justify-content-left">
             <div class="card">
-
-                <div class="card-header">Profiel</div>
+                <div class="card-header" style="text-align:center"><b>Profiel</b></div>
                 
                 <div class="card-body">
                 
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <h6> Dit zijn uw gegevens, indien u wilt unt u ze aanvullen</h6> 
+            
+                    <h6> Dit zijn uw gegevens, indien u wilt kunt u ze aanvullen</h6> 
                         <form method="POST" action="{{ route('profiel.update') }}">
                         @csrf
                         @method('PUT')
@@ -116,7 +116,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}></label>
+                            <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
                                 <input id="postcode" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ $user->postcode }}" >
@@ -195,6 +195,7 @@
                         </div>
                     </form>
                 </div>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
@@ -203,16 +204,14 @@
     
             <div class="col-md-3">
                 <div class="card mt-4">
-                <div class="card-header">  
-            <select name="vrienden">
+                <div class="card-header" style="text-align:center"><b>Vrienden</b></div>
+    
+                    <div class="card-body">
+                      <select name="vrienden">
                         @foreach($user->vrienden as $vriend)
                         <option>{{ $vriend->voornaam }} {{ $vriend->achternaam }} </option>
                         @endforeach
-                         </select>   
-                    </div>
-    
-                    <div class="card-body">
-                      
+                         </select> 
                         
                     </div>
     
