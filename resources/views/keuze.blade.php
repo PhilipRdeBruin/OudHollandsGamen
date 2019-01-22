@@ -11,8 +11,8 @@
         <div class="row welkomknoppen">
         <div class="col-md-4">
                 <button type="button" class="knop-mpl knop-keuze" onclick="document.location='/keuzevrienduitnodiging'">
-                    Ik wil <u><i>eerst</i></u> iemand<br/>
-                    <span class="px-24"><i>(of meerdere personen)</i></span>
+                    Ik wil <u><i>eerst</i></u> een vriend<br/>
+                    <span class="px-24"><i>(of meerdere vrienden)</i></span>
                     uitnodigen om mee te spelen
                 </button>
                 <div class="keuze-label">

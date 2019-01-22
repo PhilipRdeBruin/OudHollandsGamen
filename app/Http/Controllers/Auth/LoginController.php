@@ -38,10 +38,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     
-    /*
-    public function username() {
-        return 'gebr_naam';
-    }*/
+    
+    public function userOnline() {
+        $userOnline = User::where('id', 'active_id')
+    } 
+    
         
        
     

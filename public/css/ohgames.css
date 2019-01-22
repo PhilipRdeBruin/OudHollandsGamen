@@ -139,6 +139,11 @@
     height          : auto;
 }
 
+.imgSpel {
+    width           : 50%;
+    height          : auto;
+}
+
 .knop-spel {
     width           : 200px;
     height          : 200px;

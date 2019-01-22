@@ -19,8 +19,8 @@
         </div>
     <br>
 
-    <div class="row justify-content-around" id = "profielweergave">
-        <div class="col-sm-10">
+    <div class="row justify-content-center" id = "profielweergave">
+        <div class="col-md-5">
             <div class="card">
 
                 <div class="card-header">Profiel</div>
@@ -203,8 +203,7 @@
         <div class="card-header">kennis</div>
             <div class="card-body">
             <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-img-overlay"></div> 
-            
+                <div class="card-img-overlay"></div>             
             </div>
             <a href="#" class="btn btn-primary">Spelen</a>
         </div>
