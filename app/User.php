@@ -30,6 +30,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
     
+    public function vrienden() {
+        return $this->belongsToMany('App\User', 'users_relations', 'gebruiker', 'vriend');
+    }
+
 }

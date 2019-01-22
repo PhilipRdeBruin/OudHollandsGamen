@@ -1,4 +1,4 @@
-@if(!empty ($vrtekst))
+@if(!empty($vrtekst))
 <br>
 <div>
     <button onclick="vraagTekst()">
@@ -26,6 +26,5 @@ function vraagTekst() {
     x.style.display = "none";
   }
 }
-
-</script> 
+</script>
 @endif

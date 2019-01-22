@@ -1,6 +1,9 @@
 <?php 
-    $active_navlink = 'Spelkeuze';
-    $spelletjes = App\Spelletje::All();
+    namespace App\Http\Controllers;
+    $active_navlink = 'profiel'; 
+    $filterkey = "filter";
+    $vrienden = \App\User::All();
+    $spelletjes = \App\Spelletje::All();
 ?>
 
 @extends('layouts.standaard')
@@ -21,14 +24,17 @@
 
     <div class="row justify-content-center" id = "profielweergave">
         <div class="col-md-5">
+<<<<<<< HEAD
+=======
+            <div class="row justify-content-left">
+>>>>>>> 5bf7ea272f2a50be43af038f26078371d7fe16f4
             <div class="card">
-
-                <div class="card-header">Profiel</div>
+                <div class="card-header" style="text-align:center"><b>Profiel</b></div>
                 
                 <div class="card-body">
                 
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <h6> Dit zijn uw gegevens, indien u wilt unt u ze aanvullen</h6> 
+            
+                    <h6> Dit zijn uw gegevens, indien u wilt kunt u ze aanvullen</h6> 
                         <form method="POST" action="{{ route('profiel.update') }}">
                         @csrf
                         @method('PUT')
@@ -41,6 +47,7 @@
                                         <strong>{{ $errors->first('gebr_naam') }}</strong>
                                     </span>
                                 @endif
+                            </div>
                         </div>
                         
                         <div class="form-group row">
@@ -112,7 +119,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}></label>
+                            <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Postcode') }}</label>
 
                             <div class="col-md-6">
                                 <input id="postcode" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="postcode" value="{{ $user->postcode }}" >
@@ -189,26 +196,34 @@
                                 </button>
                             </div>
                         </div>
-                   
                     </form>
+                </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="col-md-4">
+            <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/vriendtoevoegen'">Vriend toevoegen<br/><span class="px-14"></span></button>
 </div>
-                           
-<div class ="row">
-    <div class="col-sm-6">
-        <div class="card">
-        <div class="card-header">kennis</div>
-            <div class="card-body">
-            <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-img-overlay"></div>             
+    
+            <div class="col-md-3">
+                <div class="card mt-4">
+                <div class="card-header" style="text-align:center"><b>Vrienden</b></div>
+    
+                    <div class="card-body">
+                      <select name="vrienden">
+                        @foreach($user->vrienden as $vriend)
+                        <option>{{ $vriend->voornaam }} {{ $vriend->achternaam }} </option>
+                        @endforeach
+                         </select> 
+                        
+                    </div>
+    
+                    <div class="card-img-overlay">
+                    </div> 
+                </div>
+                <a href="#" class="btn btn-primary">Spelen</a>
             </div>
-            <a href="#" class="btn btn-primary">Spelen</a>
-        </div>
-    </div> 
-</div>  
+        </div>    
                     
 <div class ="row">   
     <div class="col-sm-6">
@@ -224,5 +239,4 @@
         </div>            
     </div>
 </div>   
-   
 @endsection
