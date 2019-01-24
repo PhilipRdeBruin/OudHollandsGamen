@@ -34,5 +34,9 @@ class User extends Authenticatable
     public function vrienden() {
         return $this->belongsToMany('App\User', 'users_relations', 'gebruiker', 'vriend');
     }
+    
+    public function vriendenReverse() {
+        return $this->belongsToMany('App\User', 'users_relations', 'vriend', 'gebruiker');
+    }
 
 }
