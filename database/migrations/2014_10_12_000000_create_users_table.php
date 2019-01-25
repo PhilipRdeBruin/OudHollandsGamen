@@ -36,6 +36,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->timestamp('loged_in_at')->nullable();
+            $table->timestamp('Loged_out_at')->nullable();
         });
     }
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class SpelController extends Controller
 {
@@ -22,10 +24,18 @@ class SpelController extends Controller
 
             $spelletje = \App\Spelletje::find($id);
 
-            return view('spel', ['spelletje' => $spelletje, 'vrtekst' => $vrtekst]);
+            $users = User::all();
 
-            
+            return view('spel',['users' => $users, 'spelletje' => $spelletje, 'vrtekst' => $vrtekst ]);            
             
         }
 
+        public function spelSpelen($id,$uitgenodigde){
+            
+            $gebruiker = Auth::user();
+            
+            //nu naar spel spelen gaan met deze 3 variabelen. Route gaat nu nog naar "spel/{{spel->id}}"
+            var_dump ($id,$gebruiker->id,$uitgenodigde);
+            die();
+        }
 }
