@@ -16,6 +16,8 @@ class MailController extends Controller
        $gebruiker_id = Auth::user()->id;
        $vriend_email = User::findOrFail($vriend_id)->email;
        Mail::to($vriend_email)->send(new Vriendtoevoegen($gebruiker_id, $vriend_id));
+       
+       return redirect('/profiel');
    }
 }
 
