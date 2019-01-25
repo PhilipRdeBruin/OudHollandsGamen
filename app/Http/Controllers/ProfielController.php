@@ -45,31 +45,7 @@ class ProfielController extends Controller
     }
 
 
-    //nog aan het stoeien om de gegevens van het form in de db vrienden op te slaan.
-
-    // public function store(Request $request)
-    // {
-    //     $this->validate(request(),[
-    //         //put fields to be validated here
-    //         ]);         
-       
-    // $vriend=new Vriend();
-    //     $vriend->vr_voornaam = $request[$user->voornaam];
-    //     $vriend->vr_tussenvoegsel= $request[$user->tussenvoegsel];
-    //     $vriend->vr_achternaam = $request[$user->achternaam];
     
-    //     $vriend->save();
-
-    //         );
-    //     return redirect('/profiel');
-    // }
-    
-    // public function save_data(Request $request)
-    //     {     
-    //     $vriend = Vriend::create($request->all());
-    //     return redirect()->route('/profiel');
-    //     }
-
 }
 
 

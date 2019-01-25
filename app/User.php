@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Cache;
 
 class User extends Authenticatable
 {
@@ -19,7 +20,7 @@ class User extends Authenticatable
         'gebr_naam', 'email', 'password',
         'voornaam', 'initialen', 'tussenv', 'achternaam',
         'straatnaam', 'huisnummer', 'postcode', 'woonplaats',
-        'telefoon', 'mobiel', 'wachtwoord_sh',
+        'telefoon', 'mobiel', 'loged_in_at', 'loged_out_at',
     ];
 
     /**
@@ -33,6 +34,10 @@ class User extends Authenticatable
     
     public function vrienden() {
         return $this->belongsToMany('App\User', 'users_relations', 'gebruiker', 'vriend');
+    }
+
+    public function isOnline(){
+        return Cache::has('user-online-'.$this->id);
     }
 
 }

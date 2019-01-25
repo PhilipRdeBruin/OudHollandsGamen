@@ -53,4 +53,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::post('profiel/{id}', 'SpelController@spel');
 
-
+Route::post('spel/{id}/{uitgenodigde}', 'SpelController@spelSpelen')->name('spelSpelen');

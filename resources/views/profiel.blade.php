@@ -24,10 +24,7 @@
 
     <div class="row justify-content-center" id = "profielweergave">
         <div class="col-md-5">
-<<<<<<< HEAD
-=======
             <div class="row justify-content-left">
->>>>>>> 5bf7ea272f2a50be43af038f26078371d7fe16f4
             <div class="card">
                 <div class="card-header" style="text-align:center"><b>Profiel</b></div>
                 
