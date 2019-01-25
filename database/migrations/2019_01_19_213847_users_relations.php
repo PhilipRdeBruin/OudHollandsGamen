@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpelletjesTable extends Migration
+class UsersRelations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSpelletjesTable extends Migration
      */
     public function up()
     {
-        Schema::create('spelletjes', function (Blueprint $table) {
+       Schema::create('users_relations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('spel_naam');
-            $table->string('link', 191);
-            $table->unsignedInteger('aantalspelers');
+            $table->unsignedInteger('gebruiker');
+            $table->unsignedInteger('vriend');
+            $table->foreign('gebruiker')->references('id')->on('users');
+            $table->foreign('vriend')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateSpelletjesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spelletjes');
+    Schema::dropIfExists('users_relations');
     }
 }

@@ -11,7 +11,7 @@
     </div>
       <div class="row justify-content-center">
           <div class="container col-md-8" style="text-align:center">
-    <h4>Hier onder kunt een speler selecteren om deze toe te voegen als vriend. Als de speler uw uitnodiging accepteert dan kunt u eenvoudig een afspraak met hem/haar maken. </h4>
+    <h4>Hier onder kunt een speler selecteren om deze toe te voegen als vriend. Als de speler uw uitnodiging accepteert dan kunt u eenvoudig een afspraak met hem of haar maken. </h4>
     </div>
           
     </div>
@@ -21,7 +21,7 @@
          <div class="card-header" style="text-align:center"><b>Vriend toevoegen</b></div>
          <div class="card-body">
              <div class="row justify-content-center">
-             <form method="POST" action="/vriendentoevoegen"> 
+             <form method="POST" action="{{ route('vriendtoevoegen') }}"> 
                 @csrf
                  <select name="vriend">
     @foreach ($users as $user)
@@ -38,7 +38,9 @@
                 </select>
                
               <div class="row justify-content-center mt-2">
-              <input type="submit" value="Toevoegen" class="btn btn-primary">
+              <input type="submit">
+                  
+                  
                  
                  </div>
                   </form>
@@ -54,5 +56,4 @@
                 
 
           
-        @include('includes.vraag')
 @endsection
