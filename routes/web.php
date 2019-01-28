@@ -33,7 +33,7 @@ Route::get('test', function () {
 Route::get('setup_spel/{id}', 'ActievespelController@spel');
  
 
-Route::post('test', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
+Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
 
 Route::get('/vriendtoevoegen', 'User_RelationController@vrienden')->name('vriendkiezen');
 
@@ -51,6 +51,10 @@ Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
 
 Route::get('spel/{id}', 'SpelController@spel')->name('spel');
 
+Route::get('spelreserveren', function() {
+   return view('spel_reserveren');
+});
+
 Route::post('vriendentoevoegen', 'MailController@mailvriendtoevoegen')->name('vriendtoevoegen');
 
 Route::get('vriendbevestigen/{gebruiker_id}/{vriend_id}', 'User_RelationController@vriendToevoegenMail')->name('vriendbevestigen');
@@ -63,3 +67,4 @@ Route::group(['middleware' => ['auth']], function() {
 Route::post('profiel/{id}', 'SpelController@spel');
 
 Route::post('spel/{id}/{uitgenodigde}', 'SpelController@spelSpelen')->name('spelSpelen');
+

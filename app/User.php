@@ -44,4 +44,8 @@ class User extends Authenticatable
         return Cache::has('user-online-'.$this->id);
     }
 
+    public function actieveSpelletjes() {
+        return $this->belongsToMany('App\Actievespelletje', 'actievespelletjes_users', 'speler_id', 'act_spel_id');
+    }
+
 }

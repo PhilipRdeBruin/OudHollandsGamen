@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use \App\spelletje;
 
 class SpelController extends Controller
 {
@@ -38,4 +39,5 @@ class SpelController extends Controller
             var_dump ($id,$gebruiker->id,$uitgenodigde);
             die();
         }
+
 }
