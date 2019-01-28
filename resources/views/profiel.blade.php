@@ -4,6 +4,7 @@
     $filterkey = "filter";
     $vrienden = \App\User::All();
     $spelletjes = \App\Spelletje::All();
+    use \App\Spelletje;
 ?>
 
 @extends('layouts.standaard')
@@ -24,31 +25,31 @@
 
     <div class="row justify-content-center" id = "profielweergave">
         <div class="col-md-5">
-            <div class="row justify-content-left">
+            
             <div class="card">
 
-            <div class="card" style="width: 29rem;">
+                <div class="card" style="width: 29rem;">
 
                 <div class="card-header" style="text-align:center"><b>Profiel</b></div>
                 
-                <div class="card-body">
+                    <div class="card-body">
                 
             
-                    <h6 style="text-align:center"> Dit zijn uw gegevens, indien u wilt kunt u ze aanvullen</h6> 
-                        <form method="POST" action="{{ route('profiel.update') }}">
-                        @csrf
-                        @method('PUT')
-                        <div class = "form-group row">                        
-                            <label for="gebr_naam" class="col-md-4 col-form-label text-md-right">{{ __('Gebruikersnaam') }}</label>
-                            <div class="col-md-8"  >
-                            <input id="gebr_naam" type="text" class="form-control{{ $errors->has('gebr_naam') ? ' is-invalid' : '' }}" style="color:#46f; font-weight:bold" name="gebr_naam" value="{{ $user->gebr_naam }}" >
-                                @if ($errors->has('gebr_naam'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('gebr_naam') }}</strong>
-                                    </span>
-                                @endif
+                        <h6 style="text-align:center"> Dit zijn uw gegevens, indien u wilt kunt u ze aanvullen</h6> 
+                            <form method="POST" action="{{ route('profiel.update') }}">
+                            @csrf
+                            @method('PUT')
+                            <div class = "form-group row">                        
+                                <label for="gebr_naam" class="col-md-4 col-form-label text-md-right">{{ __('Gebruikersnaam') }}</label>
+                                <div class="col-md-8"  >
+                                <input id="gebr_naam" type="text" class="form-control{{ $errors->has('gebr_naam') ? ' is-invalid' : '' }}" style="color:#46f; font-weight:bold" name="gebr_naam" value="{{ $user->gebr_naam }}" >
+                                    @if ($errors->has('gebr_naam'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('gebr_naam') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
                         
                         <div class="form-group row">
                             <label for="voornaam" class="col-md-4 col-form-lael text-md-right">{{ __('Voornaam') }}</label>
@@ -194,15 +195,15 @@
                                     {{ __('updaten van uw gegevens') }}
                                 </button>
                             </div>
-                        </div>
-                    </form>
+                            </div>
+                            </form>
                 </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/vriendtoevoegen'">Vriend toevoegen<br/><span class="px-14"></span></button>
-</div>
+        </div>
     
             <div class="col-md-3">
                 <div class="card mt-4">
@@ -254,19 +255,36 @@
                 </div>
              <div class="card mt-5">
                  <div class="card-header" style="text-align:center"><b>mijn leukste spel is:</b>
-            <ul class = 'ProfielFavSpel' >
-                @foreach($spelletjes as $spelletje)
-                    <li onclick = "FavSpelFoto()">{{ $spelletje->spel_naam }}</li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="card-body">
-            </div>
-        </div>    
-            
-  
+                   
+                       
+                            <ul class = 'ProfielFavSpel' >
+                                @foreach($spelletjes as $spelletje)
+                                  <li onclick = "showFoto({{$spelletje->id}})">{{ $spelletje->spel_naam }} </li>
+                                @endforeach
+                            </ul>
+                      
+                  
+                </div>
+                <div class="card-body"> 
+                    <p id = "SpelFoto" > </p>               
+                    
+                            <script>                                  
+                               
+                                    function showFoto(y) {
+                                        var x = document.createElement("IMG");
+                                        x.setAttribute("src", `afbeeldingen/spellen/spel${y}.png` );
+                                        x.setAttribute("width", "20");
+                                        x.setAttribute("height", "20");
+                                        x.setAttribute("alt", "Foto van uw favouriete spel");
+                                        document.getElementById("SpelFoto").innerHTML = x;
+                                    }
+                                
+                            </script>
 
-       
+                                            
+                    </div>
+                </div>
+            </div>          
         </div>            
     </div>
 </div>   
