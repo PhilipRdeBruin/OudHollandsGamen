@@ -33,7 +33,7 @@ Route::get('test', function () {
 Route::get('setup_spel/{id}', 'ActievespelController@spel');
  
 
-Route::post('test', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
+Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
 
 Route::get('/vriendtoevoegen', 'User_RelationController@vrienden')->name('vriendkiezen');
 
@@ -50,6 +50,10 @@ Route::get('keuzevrienduitnodiging', 'KeuzeController@keuzevrienduitnodiging')->
 Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
 
 Route::get('spel/{id}', 'SpelController@spel')->name('spel');
+
+Route::get('spelreserveren', function() {
+   return view('spel_reserveren');
+});
 
 Route::post('vriendentoevoegen', 'MailController@mailvriendtoevoegen')->name('vriendtoevoegen');
 

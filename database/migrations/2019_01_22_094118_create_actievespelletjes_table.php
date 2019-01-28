@@ -16,15 +16,12 @@ class CreateActievespelletjesTable extends Migration
         Schema::create('actievespelletjes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('spel_id');
-            $table->unsignedInteger('user_id1');
-            $table->unsignedInteger('user_id2');
-            $table->unsignedInteger('user_id3')->nullable();
-            $table->unsignedInteger('user_id4')->nullable();
-            $table->foreign('spel_id')->references('id')->on('spelletjes'); 
-            $table->foreign('user_id1')->references('id')->on('users'); 
-            $table->foreign('user_id2')->references('id')->on('users'); 
-            $table->foreign('user_id3')->references('id')->on('users'); 
-            $table->foreign('user_id4')->references('id')->on('users');
+            $table->unsignedInteger('host');
+            $table->unsignedInteger('gamestate');
+            $table->unsignedInteger('winnaar')->nullable();
+            $table->foreign('spel_id')->references('id')->on('spelletjes');
+            $table->foreign('host')->references('id')->on('users');
+            $table->foreign('winnaar')->references('id')->on('users'); 
             $table->dateTime('aanvangstijdstip');
             $table->timestamps();
         });

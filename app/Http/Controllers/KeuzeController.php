@@ -12,12 +12,16 @@ use DB;
 class KeuzeController extends Controller
 {
     public function keuze(){
-        $vrtekst = DB::table('vraagtekens')->where('naam', 'keuze')->value('vrtekst');   
-        return view('keuze', ['vrtekst' => $vrtekst]);
+        $vrtekst = DB::table('vraagtekens')->where('naam', 'keuze')->value('vrtekst');
+        //haal alle actieve spellen op van de ingelogde gebruiker
+
+        $gebruiker = Auth::user();
+        $actieve_spellen = $gebruiker->actieveSpelletjes()->where('gamestate', '!=', '99')->get();
+
+        return view('keuze', ['vrtekst' => $vrtekst, 'actievespellen' => $actieve_spellen, 'gebruiker' => $gebruiker]);
     }
 
     public function keuzevrienduitnodiging(){
-
         $vrtekst = DB::table('vraagtekens')->where('naam', 'keuzevrienduitnodiging')->value('vrtekst');
         return view('keuzevrienduitnodiging',['vrtekst' => $vrtekst]);
         }  
