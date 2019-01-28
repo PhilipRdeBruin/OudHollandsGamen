@@ -24,7 +24,6 @@
 
     <div class="row justify-content-center" id = "profielweergave">
         <div class="col-md-5">
-            <div class="row justify-content-left">
             <div class="card">
 
             <div class="card" style="width: 29rem;">
