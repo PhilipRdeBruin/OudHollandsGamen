@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actievespelletje extends Model
 {
-    //
+
+    public function users() {
+        return $this->belongsToMany('App\User', 'actievespelletjes_users', 'act_spel_id', 'speler_id');
+    }
+
+    public function spelletje() {
+        return $this->belongsTo('App\Spelletje', 'spel_id');
+    }
+
 }

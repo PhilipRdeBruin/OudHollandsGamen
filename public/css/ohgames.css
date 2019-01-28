@@ -291,3 +291,64 @@
     border-radius   : 7px;
     cursor          : pointer;
 }
+
+
+#actievespellen {
+    margin-top      : 50px;
+    margin-left     : 10%;
+    padding-top     : 30px;
+}
+
+#actspelhdr {
+    margin-left     : 10%;
+    margin-bottom   : 30px;
+    width           : 80%;
+    font-weight     : bold;
+    color           : #007bff;
+    text-align      : center; 
+}
+
+#actspel_ihdr {
+    font            : 24px;
+    font-weight     : bold;
+    color           : white;
+    background      : #24a;
+    text-align      : center;
+}
+
+#actspel_info {
+    margin          : 0px;
+    font            : 14px;
+    color           : #24a;
+    text-align      : center;
+}
+
+#actspelcard {
+    margin-top      : 20px;
+    margin-left     : 10%;
+    width           : 80%;
+    border          : 1px solid #007bff;
+    border-radius   : 5px; 
+}
+
+.spelknoppen {
+    margin-top      : 10px;
+    margin-left     : 0%;
+    padding         : 5px 20px;
+    width           : 100%;
+    height          : 60px;
+    font-size       : 20px;
+    font-weight     : bold;
+    color           : white;
+    background      : #007bff;
+    border          : 1px solid #007bff;
+    border-radius   : 5px; 
+    text-wrap       : unrestricted;
+}
+
+.spelknoppen:hover {
+    text-decoration : none; 
+    background      : #f42;
+    border          : 1px solid #f42;
+    cursor          : pointer;
+}
