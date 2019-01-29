@@ -9,14 +9,13 @@ use App\User;
 
 class User_RelationController extends Controller
 {
-     public function vrienden()
-        {
-            $vrienden = \App\User::All();
-            return view('vriendtoevoegen', ['users' => $vrienden]);
-        }
-
-                                    
-     public function vriendtoevoegen(Request $request)
+    public function vrienden()
+    {
+        $vrienden = \App\User::All();
+        return view('vriendtoevoegen', ['users' => $vrienden]);
+    }
+                               
+    public function vriendtoevoegen(Request $request)
     {
          //get user id from post
          $vriend = $request->input('vriend'); 

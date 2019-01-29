@@ -31,9 +31,10 @@ Route::get('test', function () {
  });
 
 Route::get('setup_spel/{id}', 'ActievespelController@spel');
- 
 
-Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
+//Route::post('keuzevrienduitnodiging', 'ActievespelController@actiefspeltoevoegen');
+
+Route::post('keuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
 
 Route::get('/vriendtoevoegen', 'User_RelationController@vrienden')->name('vriendkiezen');
 

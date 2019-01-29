@@ -23,7 +23,7 @@ class KeuzeController extends Controller
 
     public function keuzevrienduitnodiging(){
         $vrtekst = DB::table('vraagtekens')->where('naam', 'keuzevrienduitnodiging')->value('vrtekst');
-        return view('keuzevrienduitnodiging',['vrtekst' => $vrtekst]);
-        }  
-    
+        $user = Auth::user();
+        return view('keuzevrienduitnodiging',['vrtekst' => $vrtekst, 'user' => $user]);
+    }
 }
