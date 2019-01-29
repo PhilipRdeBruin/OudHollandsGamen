@@ -12,7 +12,7 @@ class ActievespelController extends Controller
 
    public function actiefspeltoevoegen (Request $request)
    {
-        $spelletje = \App\Spelletje::where('spel_naam', $request->input('spel'))->first();
+       $spelletje = \App\Spelletje::where('spel_naam', $request->input('spel'))->first();
        $actiefspel = new Actievespelletje();
 
        $actiefspel->spel_id = $spelletje->id; //$spelletje->id;

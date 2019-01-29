@@ -352,3 +352,23 @@
     border          : 1px solid #f42;
     cursor          : pointer;
 }
+
+#form_speleruitnodigen {
+    width: 75%;
+    padding: 20px;
+    background: #ddd;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+}
+
+#speluitnodigenknop {
+    margin-left     : auto;
+    margin-top      : 25px;
+    width           : 50%;
+    padding         : 3px 10px;
+    font-weight     : bold;
+    color           : white;
+    background      : #007bff;
+    border          : 1px solid #007bff;
+    border-radius   : 5px; 
+}
