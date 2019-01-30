@@ -12,16 +12,18 @@ class ActievespelController extends Controller
 
    public function actiefspeltoevoegen (Request $request)
    {
-       $spelletje = \App\Spelletje::where('spel_naam', $request->input('spel'))->first();
+       // $spelletje = \App\Spelletje::where('spel_naam', $request->input('spel'))->first();
+       $spelletje = \App\Spelletje::where('id', $request->input('spel'))->first();
        $actiefspel = new Actievespelletje();
 
-       $actiefspel->spel_id = $spelletje->id; //$spelletje->id;
+       $actiefspel->spel_id = $spelletje->id;
        $actiefspel->host = Auth::id();
        $actiefspel->aanvangstijdstip = $request->input('aanvangstijdstip');
        $actiefspel->gamestate = 0;
        $actiefspel->save();
        
-       $spelers = \App\User::whereIn('gebr_naam', $request->input('speler'))->get();
+       // $spelers = \App\User::whereIn('gebr_naam', $request->input('speler'))->get();
+       $spelers = \App\User::whereIn('id', $request->input('speler'))->get();
 
         foreach ($spelers as $speler) {
             // dd($actiefspel);

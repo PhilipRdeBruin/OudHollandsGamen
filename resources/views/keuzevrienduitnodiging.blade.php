@@ -58,7 +58,7 @@
                                 @endif
                             </td>                        
                             <td>
-                                <select class="form-control" name="speler1" id="speler1">
+                                <select class="form-control" name="speler[]" id="speler{{ $i }}">
 
                                     <?php
                                         $vn = Auth::user()->voornaam;
@@ -68,7 +68,7 @@
                                     ?> 
 
                                     @if ($i == 1) {
-                                        <option value="Auth::id()" selected>{{ $vriendy }}</option>
+                                        <option value="{{ Auth::id() }}" selected>{{ $vriendy }}</option>
                                     @else
                                         <option value="leeg" selected></option>
                                     @endif
@@ -80,12 +80,17 @@
                                             $an = $vriend->achternaam;
                                             $vriendy = $vn . $tv . " " . $an;           
                                         ?> 
-                                        <option value="{{ $user->id }}">{{ $vriendy }}</option>
+                                        <option value="{{ $vriend->id }}">{{ $vriendy }}</option>
                                     @endforeach
                                 </select>
                             </td>
                         </tr>
                     @endfor
+
+                    <tr>
+                        <td>aanvangstijdstip:</td>
+                        <td><input type="datetime" name="aanvangstijdstip"></td>
+                    </tr>
                 </table>
                 <input id="speluitnodigenknop" type="submit" value="Uitnodiging versturen">
             </form>
