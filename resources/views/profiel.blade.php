@@ -257,16 +257,7 @@
         
                     
                     </div> 
-                </div>
-             <div class="card mt-5">
-                 <div class="card-header" style="text-align:center"><b>mijn leukste spel is:</b>
-                   
-                       
-                            <ul class = 'ProfielFavSpel' >
-                                @foreach($spelletjes as $spelletje)
-                                  <li onclick = "showFoto({{$spelletje->id}})">{{ $spelletje->spel_naam }} </li>
-                                @endforeach
-                            </ul>
+                
                       
                   
                 </div>

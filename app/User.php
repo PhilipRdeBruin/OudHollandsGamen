@@ -45,7 +45,7 @@ class User extends Authenticatable
     }
 
     public function actieveSpelletjes() {
-        return $this->belongsToMany('App\Actievespelletje', 'actievespelletjes_users', 'speler_id', 'act_spel_id');
+        return $this->belongsToMany('App\Actievespelletje', 'actievespelletjes_users', 'speler_id', 'act_spel_id')->withPivot('id');
     }
 
     public function voegVriendToe(User $vriend) {

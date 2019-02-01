@@ -15,19 +15,18 @@ Auth::routes();
 Route::get('/index', function () {
    return view('index');
  });
- 
-Route::get('/vraag', function () {
+     
+ Route::get('/vraag', function () {
+
     return view('includes/vraag');
  });
 Route::get('test', function () {
     return view('test');
  });
 
-Route::get('setup_spel/{id}', 'ActievespelController@spel');
+Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('actiefspeltoevoegen');
 
-//Route::post('keuzevrienduitnodiging', 'ActievespelController@actiefspeltoevoegen');
-
-Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
+Route::get('spelaccepteren/{id}', 'ActievespelController@actiefspelaccepteren')->name('actiefspelaccepteren');
 
 
 
@@ -61,9 +60,15 @@ Route::post('spel/{id}/{uitgenodigde}', 'SpelController@spelSpelen')->name('spel
 Route::post('profiel/{id}', 'SpelController@spel');
 
 Route::get('spelreserveren', function() {
-   return view('spel_reserveren');
+   return view('spelreserveren');
 });
 
 Route::post('keuzevrienduitnodiging/{vriend}, keuzeController@naarChat')->name('naarChat');
 
 Route::post('vriendentoevoegen', 'MailController@mailvriendtoevoegen')->name('vriendtoevoegen');
+
+Route::post('NieuwSpeler', 'MailController@nieuwspelertoevoegen')->name('nieuwspelertoevoegen');
+
+
+
+

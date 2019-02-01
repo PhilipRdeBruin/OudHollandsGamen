@@ -1,16 +1,9 @@
 <?php
-    namespace App\Http\Controllers; 
-    use Illuminate\Support\Facades\Schema;
-    use Illuminate\Database\Schema\Blueprint;
-    use Illuminate\Database\Migrations\Migration; 
-    use Illuminate\Support\Facades\Auth;
-    use \App\Spelletje;
-    use \App\User;
+
     $vrienden = \App\User::All();
     $spelletjes = \App\Spelletje::All();
     $active_navlink = 'keuzevrienduitnodiging'; 
     $filterkey = "filter"; 
-  
   
 ?>
 
@@ -18,7 +11,9 @@
 @extends('layouts.standaard')
 @section('content')
 
-<div class="conainer">
+
+<div class="container">
+
     <div class="row justify-content-center mt-5">
         <div class="col-md-6" style="text-align:center">
             <h1><span class="kl_blauw">Kennis uitnodigen</span></h1><br>
@@ -27,13 +22,13 @@
 
    
     <div class="row justify-content-center mt-5"> 
-     <!--links- form om spel te reserveren-->       
+     
         
         <div class="col-md-6">
             <h5 style="color:#24a;font-weight:bold">Reserveer hier een spel<br> En stuur de uitnodiging per mail naar uw medespeler(s)</h5>
-    
 
-            <form id="form_speleruitnodigen" method="post" action="/spelkeuze" style="margin-top:40px">
+
+            <form id="form_speleruitnodigen" method="post" action="{{route('actiefspeltoevoegen')}}" style="margin-top:40px">
                 @csrf
                 <table>
                     <tr>
@@ -58,7 +53,9 @@
                                 @endif
                             </td>                        
                             <td>
-                                <select class="form-control" name="speler[]" id="speler{{ $i }}">
+
+                                <select class="form-control" name="spelers[]" id="speler{{ $i }}">
+
 
                                     <?php
                                         $vn = Auth::user()->voornaam;
@@ -98,34 +95,30 @@
                 
     
     </div>
-        
-    <!--rechts--cards met vrienden online-->   
+    
     <div class="col-md-4 col-md-offset-2">
         <div class="row justify-content-center md-4"> 
         <h5 style="color:#24a;font-weight:bold">Hieronder ziet uw uw vrienden die op dit moment online zijn.</h5>
         <br>
     </div>
 
-    <div class="row">                        
+                      
         @foreach($user->vrienden as $vriend)
             @if($vriend->isOnline())
             <form action = "{{ route('naarChat', ['$vriend' => $user->gebr_naam]) }}" method = "POST" > 
             @csrf    
                 <div class="card mt-4">   
                     <div class="card-header">                  
-                        <li>{{ $vriend->gebr_naam }}</li>    
+                        <li>{{ $vriend->gebr_naam }}</li> 
                     </div>
-
                     <div class="card-body">
                         <img class="card-img-top" src="..." alt="Card image cap">
                     </div> 
                 </div>
                 <input type = "submit" class="btn btn-primary" value = "Samen overleggen wat te spelen" >
+                    
             </form>
             @endif
         @endforeach
     </div>
-                    
-         
-
 @endsection
