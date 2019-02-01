@@ -20,6 +20,7 @@
         <div class="card mt-5">
          <div class="card-header" style="text-align:center"><b>Vriend toevoegen</b></div>
          <div class="card-body">
+             <p style="text-align:center"><b>Selecteer een vriend</b></p>
              <div class="row justify-content-center">
              <form method="POST" action="{{ route('vriendtoevoegen') }}"> 
                 @csrf
@@ -42,15 +43,46 @@
                   
                   
                  
+                  
                  </div>
                   </form>
-               </div>
-             
-         </div>
+             </div>
             </div>
+              </div>
+           </div>
+                 
+        
+          <div class="container col-md-4">
+        <div class="card mt-5">
+         <div class="card-header" style="text-align:center"><b>Nieuwe speler uitnodigen</b></div>
+         <div class="card-body">
+             <div class="row justify-content-center"> 
+             <form method="POST" action="{{ route('nieuwspelertoevoegen')}}"> 
+                 @csrf
+                 <div class="row justify-content-center">
+                     <label><b>Naam</b></label></div>
+                     <div class="row justify-content-center">
+                         <input type="text" name=naam> </div>
+                    <div class="row justify-content-center mt-2">
+                     <label><b>e-mailadres</b></label></div>
+                     <div class="row justify-content-center mt-2">
+                 <input type="email" name="email">
+                 </div>
+                 <div class="row justify-content-center mt-3">
+                     <input type="submit"></div>
+                 </form>
+        
+
+             </div>
+             
+            </div>
+              </div>
+              
          
 </div>
 
+</div>
+    
 </div>
 
                 

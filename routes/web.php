@@ -14,14 +14,6 @@
 Route::get('/index', function () {
    return view('index');
  });
- 
-//  Route::get('/keuze', function () {
-//    return view('keuze', ['naam'=>'keuze']);
-//  });
- 
-//  Route::get('/profiel', function () {
-//    return view('profiel', ['naam'=>'profiel']);
-//  });
      
  Route::get('/vraag', function () {
     return view('includes/vraag');
@@ -29,11 +21,13 @@ Route::get('/index', function () {
 Route::get('test', function () {
     return view('test');
  });
-
-Route::get('setup_spel/{id}', 'ActievespelController@spel');
  
 
-Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
+//Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('test.actiefspeltoevoegen');
+
+Route::post('spelkeuze', 'ActievespelController@actiefspeltoevoegen')->name('actiefspeltoevoegen');
+
+Route::get('spelaccepteren/{id}', 'ActievespelController@actiefspelaccepteren')->name('actiefspelaccepteren');
 
 Route::get('/vriendtoevoegen', 'User_RelationController@vrienden')->name('vriendkiezen');
 
@@ -52,7 +46,7 @@ Route::get('spelkeuze', 'SpelController@spelkeuze')->name('spelkeuze');
 Route::get('spel/{id}', 'SpelController@spel')->name('spel');
 
 Route::get('spelreserveren', function() {
-   return view('spel_reserveren');
+   return view('spelreserveren');
 });
 
 Route::post('vriendentoevoegen', 'MailController@mailvriendtoevoegen')->name('vriendtoevoegen');
@@ -67,4 +61,8 @@ Route::group(['middleware' => ['auth']], function() {
 Route::post('profiel/{id}', 'SpelController@spel');
 
 Route::post('spel/{id}/{uitgenodigde}', 'SpelController@spelSpelen')->name('spelSpelen');
+
+Route::post('NieuwSpeler', 'MailController@nieuwspelertoevoegen')->name('nieuwspelertoevoegen');
+
+
 

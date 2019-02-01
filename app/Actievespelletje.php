@@ -8,7 +8,7 @@ class Actievespelletje extends Model
 {
 
     public function users() {
-        return $this->belongsToMany('App\User', 'actievespelletjes_users', 'act_spel_id', 'speler_id');
+        return $this->belongsToMany('App\User', 'actievespelletjes_users', 'act_spel_id', 'speler_id')->withPivot('id');
     }
 
     public function spelletje() {
