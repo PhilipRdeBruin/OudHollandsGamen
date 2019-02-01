@@ -17,26 +17,19 @@ class User_RelationController extends Controller
                                
     public function vriendtoevoegen(Request $request)
     {
-         //get user id from post
-         $vriend = $request->input('vriend'); 
-         //make new user relation
-        $gebruikersrelatie = new User_Relation();
-         //add current user id and new user id
-         $gebruikersrelatie->gebruiker = Auth::id();
-        $gebruikersrelatie->vriend = $vriend;   
-    
-        
-        $gebruikersrelatie = User_Relation::updateOrCreate(['vriend' => $vriend, 'gebruiker'=> Auth::id(),'gebruiker' => $vriend, 'gebruiker'=> Auth::id()]);
-         $gebruikersrelatie->save();
-         //save model
-         //redirect
+        //get user id from post
+        $vriend = $request->input('vriend');
+        $gebruiker = Auth::user();
+
+        $gebruiker->voegVriendToe($vriend);
 
         return \Redirect::to('profiel');
     }
     
     public function vriendToevoegenMail($gebruiker_id, $vriend_id) {
         $gebruiker = User::findOrFail($gebruiker_id);
-        $gebruiker->vrienden()->attach($vriend_id);
+        $vriend = User::findOrFail($vriend_id);
+        $gebruiker->voegVriendToe($vriend);
         
         return redirect()->route('vriendkiezen');
     }

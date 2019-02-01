@@ -16,6 +16,8 @@
             <h1><span class="kl_blauw">Welkom op uw profielpagina!</span></h1><br>
         </div>
     </div>
+
+<!--persoonlijke gegevens updaten-->
         <div class="row justify-content-center">
             <div class="container col-md-8" style="text-align:center">
                 <h4>Hier onder vindt u een overzicht van uw persoonlijke gegevens. Daarnaast een lijst van uw kennissen waarmee u spellen kunt spelen.</h4>
@@ -105,14 +107,14 @@
                       
 
                         <div class="form-group row">
-                            <label for="huisnummer" class="col-md-4 col-form-label text-md-right">{{ __('Huisnummer') }}</label>
+                            <label for="huisnr" class="col-md-4 col-form-label text-md-right">{{ __('Huisnummer') }}</label>
 
                             <div class="col-md-8">
-                                <input id="huisnummer" type="text" class="form-control{{ $errors->has('huisnummer') ? ' is-invalid' : '' }}" name="huisnr" value="{{ $user->huisnr }}">
+                                <input id="huisnr" type="text" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" name="huisnr" value="{{ $user->huisnr }}" >
 
-                                @if ($errors->has('huisnummer'))
+                                @if ($errors->has('huisnr'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('huisnummer') }}</strong>
+                                        <strong>{{ $errors->first('huisnr') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -201,10 +203,13 @@
                 </div>
             </div>
         </div>
+
+<!-- button vriend toevoegen-->
         <div class="col-md-4">
             <button type="button" class="knop-mpl knop-inlog" onclick="document.location='/vriendtoevoegen'">Vriend toevoegen<br/><span class="px-14"></span></button>
         </div>
     
+<!--lijst metvrienden-->            
             <div class="col-md-3">
                 <div class="card mt-4">
 

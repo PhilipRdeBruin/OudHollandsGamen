@@ -20,7 +20,6 @@ class SpelController extends Controller
         }
 
         public function spel($id){
-
             $vrtekst = DB::table('vraagtekens')->where('naam', 'spel')->value('vrtekst');
 
             $spelletje = \App\Spelletje::find($id);
@@ -31,13 +30,16 @@ class SpelController extends Controller
             
         }
 
-        public function spelSpelen($id,$uitgenodigde){
-            
+        public function spelSpelen($spelId, $uitgenodigdeId){
             $gebruiker = Auth::user();
-            
-            //nu naar spel spelen gaan met deze 3 variabelen. Route gaat nu nog naar "spel/{{spel->id}}"
-            var_dump ($id,$gebruiker->id,$uitgenodigde);
-            die();
+            $uitgenodigde = User::findOrFail($uitgenodigdeId);
+            $spel = Spelletje::findOrFail($spelId);
+
+            return view('spelSpelen',[
+                'gebruiker' => $gebruiker, 
+                'uitgenodigde' => $uitgenodigde,  
+                'spel' => $spel
+            ]);
         }
 
 }

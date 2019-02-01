@@ -27,7 +27,7 @@
 
    
     <div class="row justify-content-center mt-5"> 
-     <!--links-->       
+     <!--links- form om spel te reserveren-->       
         
         <div class="col-md-6">
             <h5 style="color:#24a;font-weight:bold">Reserveer hier een spel<br> En stuur de uitnodiging per mail naar uw medespeler(s)</h5>
@@ -99,59 +99,29 @@
     
     </div>
         
-    <!--rechts-->   
+    <!--rechts--cards met vrienden online-->   
     <div class="col-md-4 col-md-offset-2">
         <div class="row justify-content-center md-4"> 
         <h5 style="color:#24a;font-weight:bold">Hieronder ziet uw uw vrienden die op dit moment online zijn.</h5>
         <br>
     </div>
 
-    <div class="row">                    
-                            
-        @foreach($user->vrienden as $vriend) 
-            @if($user->isOnline()) 
-                <div class="card mt-4">   
-                    <div class="card-header">
-                        <?php 
-                            $vn = $vriend->voornaam;
-                            $tv = ($vriend->tussenv != NULL) ? " " . $vriend->tussenv : "" ;
-                            $an = $vriend->achternaam;
-                            $vrienden = $vn.$tv. " " . $an;           
-                        ?>                       
-                        <li value = "{{$vriend->id}}">{{$vrienden}}</li>
-                                            
-                    </div>
-
-                    <div class="card-body">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-img-overlay">
-                        </div> 
-                    </div>                
-                        <a href="#" class="btn btn-primary">Spelen</a>
-                </div>
-            @endif
-        @endforeach
-
-        @foreach($user->vriendenReverse as $gebruiker)
-            @if($gebruiker->isOnline()) 
+    <div class="row">                        
+        @foreach($user->vrienden as $vriend)
+            @if($vriend->isOnline())
+            <form action = "{{ route('naarChat', ['$vriend' => $user->gebr_naam]) }}" method = "POST" > 
+            @csrf    
                 <div class="card mt-4">   
                     <div class="card-header">                  
-                        <?php 
-                        $vn=$gebruiker->voornaam;
-                        $tv=($gebruiker->tussenv != NULL) ? " " . $gebruiker->tussenv : "" ;
-                        $an=$gebruiker->achternaam;
-                        $vrienden=$vn.$tv. " " . $an;           
-                        ?>                                
-                        <option value="{{$gebruiker->id}}">{{$vrienden}}</option>
+                        <li>{{ $vriend->gebr_naam }}</li>    
                     </div>
 
                     <div class="card-body">
                         <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-img-overlay">
-                        </div> 
-                    </div>                
-                        <a href="#" class="btn btn-primary">Spelen</a>
+                    </div> 
                 </div>
+                <input type = "submit" class="btn btn-primary" value = "Samen overleggen wat te spelen" >
+            </form>
             @endif
         @endforeach
     </div>

@@ -11,7 +11,7 @@
 
             @foreach ($spelletjes as $spelletje)
                 <div class="card-body div-spel">
-                    <a href="/spel/{{ $spelletje->id }}">
+                    <a href="{{ route('spel', ['id' => $spelletje->id]) }}">
                     <button type="button" class="knop-spel" >
                         <img class="img-spel" height="22" width="22" src="{{ asset('afbeeldingen/spellen/spel' . $spelletje->id . '.png') }}"   alt="foto{{ $spelletje->id }}">
                     </button>

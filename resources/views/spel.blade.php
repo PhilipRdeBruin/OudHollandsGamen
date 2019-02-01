@@ -16,9 +16,10 @@
                 @foreach($users as $user)
                     @if($user->isOnline())
                         <li>
-                            <form action = "{{ route('spelSpelen',['uitgenodigde' => $user->id , 'id' => $spelletje -> id]) }}" method = "POST" >
+                            <form action = "{{ route('spelSpelen', ['uitgenodigde' => $user->id , 'id' => $spelletje->id ]) }}" method = "POST" >
                                 @csrf
-                                {{$user->voornaam}} {{$user->achternaam}}
+                                
+                                <li>{{$user->gebr_naam}}</li>
                                 <input type = "submit" value="nodig uit">
                             </form>
                         </li>

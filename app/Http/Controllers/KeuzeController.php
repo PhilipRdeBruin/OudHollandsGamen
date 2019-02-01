@@ -21,9 +21,17 @@ class KeuzeController extends Controller
         return view('keuze', ['vrtekst' => $vrtekst, 'actievespellen' => $actieve_spellen, 'gebruiker' => $gebruiker]);
     }
 
-    public function keuzevrienduitnodiging(){
+    public function keuzevrienduitnodiging() {
         $vrtekst = DB::table('vraagtekens')->where('naam', 'keuzevrienduitnodiging')->value('vrtekst');
         $user = Auth::user();
-        return view('keuzevrienduitnodiging',['vrtekst' => $vrtekst, 'user' => $user]);
+        return view('keuzevrienduitnodiging', ['vrtekst' => $vrtekst, 'user' => $user]);
+    }
+
+    public function naarChat($vriend){
+        $gebruiker = Auth::user()->gebr_naam;
+        $vriend = $user->gebr_naam;
+        dd($gebruiker,$vriend);
+
+        return Redirect::away('http://www.');
     }
 }
