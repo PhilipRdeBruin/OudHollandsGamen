@@ -13,9 +13,7 @@ class SpelAccepteren extends Mailable
 
     protected $actiefSpel;
     protected $speler;
-    protected $pivotId;
-    protected $hostGebr;
-    protected $spelnaam;
+    protected $actSpelUser;
     
     
     /**
@@ -23,16 +21,11 @@ class SpelAccepteren extends Mailable
     *
     * @return void
     */
-    public function __construct($actiefSpel, $speler, $pivotId, $hostGebr, $spelnaam)
-    {
-        
+    public function __construct($actiefSpel, $speler, $actSpelUser)
+    {   
         $this->actiefSpel = $actiefSpel;
         $this->speler = $speler;
-        $this->pivotId = $pivotId;
-        $this->hostGebr = $hostGebr;
-        $this->spelnaam = $spelnaam;
-        
-        
+        $this->actSpelUser = $actSpelUser;
     }
 
     /**
@@ -45,10 +38,9 @@ class SpelAccepteren extends Mailable
         return $this->view('spelaccepterenmail', [
             'actiefSpel' => $this->actiefSpel,
             'speler' => $this->speler,
-            'pivotId' => $this->pivotId,
-            'hostGebr' => $this->hostGebr,
-            'spelnaam' => $this->spelnaam
-            
+            'pivotId' => $this->actSpelUser->id,
+            'hostGebr' => $this->actiefSpel->hostGebruiker,
+            'spelnaam' => $this->actiefSpel->spelletje->spel_naam
         ]);
     }
 }

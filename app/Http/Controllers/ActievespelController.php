@@ -15,36 +15,31 @@ use App\Mail\SpelAccepteren;
 
 class ActievespelController extends Controller
 {
-   public function actiefspeltoevoegen (Request $request)  
+   public function actiefspeltoevoegen (Request $request)  {
+//       dd($request);
+        $spelletje = Spelletje::where('id', $request->input('spel'))->first();
+        $actiefspel = new Actievespelletje(); 
+        $actiefspel->spel_id = $spelletje->id;
+        $actiefspel->host = Auth::id();
+        $actiefspel->aanvangstijdstip = $request->input('aanvangstijdstip');
+        $actiefspel->gamestate = 0;
+        $actiefspel->save();
        
-       $spelletje = \App\Spelletje::where('id', $request->input('spel'))->first();
-       $actiefspel = new Actievespelletje(); 
-       $actiefspel->spel_id = $spelletje->id;
-       $actiefspel->host = Auth::id();
-       $actiefspel->aanvangstijdstip = $request->input('aanvangstijdstip');
-       $actiefspel->gamestate = 0;
-       $actiefspel->save();
-
-       $spelers = \App\User::whereIn('id', $request->input('speler'))->get();
-
-        foreach ($spelers as $speler) {
         $spelerIds = $request->input('spelers');
-        $spelers = User::findOrFail($spelerIds);
-       
-        foreach ($spelers as $speler)
-        {
-            $speler->actieveSpelletjes()->attach($actiefspel->id);
-            
+        $spelers = User::whereIn('id', $spelerIds)->get();
+
+        foreach ($spelers as $key => $speler) {
+            $rol = $request->input('rol' . ($key + 1));
+            $speler->actieveSpelletjes()->attach($actiefspel->id, ['rol' => $rol]);
         }
-        $hostGebr = User::findOrFail(Auth::id())->gebr_naam;
-        $spelnaam = $spelletje->spel_naam;
        
-       foreach($actiefspel->users as $speler) {
-            Mail::to($speler->email)->send(new SpelAccepteren($actiefspel, $speler, $speler->pivot->id, $hostGebr, $spelnaam));
-       }
-        
-       return \Redirect::to('keuze');
+        foreach($actiefspel->users as $actieveSpeler) {
+            Mail::to($actieveSpeler->email)->send(new SpelAccepteren($actiefspel, $actieveSpeler, $actieveSpeler->pivot));
+        }
+       
+        return \Redirect::to('keuze');
    }
+   
     
     public function actiefspelaccepteren ($id) {
         $spelbevestigen = ActievespelletjeUser::findOrFail($id);

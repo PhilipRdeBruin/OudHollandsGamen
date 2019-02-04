@@ -45,7 +45,7 @@ class User extends Authenticatable
     }
 
     public function actieveSpelletjes() {
-        return $this->belongsToMany('App\Actievespelletje', 'actievespelletjes_users', 'speler_id', 'act_spel_id')->withPivot('id');
+        return $this->belongsToMany('App\Actievespelletje', 'actievespelletjes_users', 'speler_id', 'act_spel_id')->withPivot('rol');
     }
 
     public function voegVriendToe(User $vriend) {
@@ -57,5 +57,8 @@ class User extends Authenticatable
         $this->vrienden()->detach($vriend->id);
         $vriend->vrienden()->detach($this->id);
     }
-
+    
+    public function gehosteSpellen() {
+        return $this->hasMany('App\Actievespelletje', 'host');
+    }
 }
