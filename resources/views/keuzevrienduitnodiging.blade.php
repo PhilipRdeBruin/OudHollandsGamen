@@ -109,7 +109,8 @@
     <div class="row">                        
         @foreach($user->vrienden as $vriend)
             @if($vriend->isOnline())
-            <form action = "{{ route('naarChat', ['$vriend' => $user->gebr_naam]) }}" method = "POST" > 
+
+            <form action = "{{ route('naarChat', ['vriend' => $vriend->gebr_naam ]) }}" method = "POST" > 
             @csrf    
                 <div class="card mt-4">   
                     <div class="card-header">                  

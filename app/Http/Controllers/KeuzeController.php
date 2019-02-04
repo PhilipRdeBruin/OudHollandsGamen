@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use \App\User_Relation;
 use App\User;
 use DB;
+use App\Http\Controllers\Redirect;
+
+
 
 
 class KeuzeController extends Controller
@@ -28,10 +31,11 @@ class KeuzeController extends Controller
     }
 
     public function naarChat($vriend){
-        $gebruiker = Auth::user()->gebr_naam;
-        $vriend = $user->gebr_naam;
-        dd($gebruiker,$vriend);
+        $gebruiker = Auth::user();
+        $vriend = User::where('gebr_naam', $vriend)->first();
 
-        return Redirect::away('http://www.');
+        return view('chat',[
+            'gebruiker' => $gebruiker, 
+            'vriend' => $vriend]);
     }
 }
