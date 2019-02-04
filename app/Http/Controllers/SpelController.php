@@ -24,9 +24,9 @@ class SpelController extends Controller
 
             $spelletje = \App\Spelletje::find($id);
 
-            $users = User::all();
+            $gebruiker = Auth::user();
 
-            return view('spel',['users' => $users, 'spelletje' => $spelletje, 'vrtekst' => $vrtekst ]);            
+            return view('spel',['gebruiker' => $gebruiker, 'spelletje' => $spelletje, 'vrtekst' => $vrtekst ]);            
             
         }
 
