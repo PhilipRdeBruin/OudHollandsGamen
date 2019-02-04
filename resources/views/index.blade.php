@@ -4,6 +4,7 @@
 @extends('layouts.standaard')
 
 @section('content')
+<div class = "row">
 
 <!--    <img src="/afbeeldingen/compilatie1.png" id = "compilatie">   -->
 
