@@ -32,20 +32,22 @@
             </div>
         </div>
 
-        <div class="col-md-3" id="actievespellen" style="border:1px solid grey">
-            <h4 id="actspelhdr" style="font-size:20px"><u>Geplande spelletjes</u></h4>
-            @foreach($actievespellen as $actiefspel)
-                <div id=actspelcard>
-                    <p id=actspel_ihdr>{{ $actiefspel->spelletje->spel_naam }}</p>
-                    <p id=actspel_info>tijdstip: {{ $actiefspel->aanvangstijdstip }}</p>
-                    <form id="actspel" method="POST" action="{{ $actiefspel->spelletje->link }}">
-                        <input type="hidden" name="act_spel" value="{{ $actiefspel->id }}">
-                        <input type="hidden" name="speler" value="{{ $gebruiker->id }}">
-                        <input type="submit" class="spelknoppen" name="start_spel" value="Ga naar spel">
-                    </form>
-                </div>
-            @endforeach
-        </div>
+        @if(!empty($actievespellen))
+            <div class="col-md-3" id="actievespellen" style="border:1px solid grey">
+                <h4 id="actspelhdr" style="font-size:20px"><u>Geplande spelletjes</u></h4>
+                @foreach($actievespellen as $actiefspel)
+                    <div id=actspelcard>
+                        <p id=actspel_ihdr>{{ $actiefspel->spelletje->spel_naam }}</p>
+                        <p id=actspel_info>tijdstip: {{ $actiefspel->aanvangstijdstip }}</p>
+                        <form id="actspel" method="POST" action="{{ $actiefspel->spelletje->link }}">
+                            <input type="hidden" name="act_spel" value="{{ $actiefspel->id }}">
+                            <input type="hidden" name="speler" value="{{ $gebruiker->id }}">
+                            <input type="submit" class="spelknoppen" name="start_spel" value="Ga naar spel">
+                        </form>
+                    </div>
+                    @endforeach
+            </div>
+        @endif
 
     </div>
 </div>

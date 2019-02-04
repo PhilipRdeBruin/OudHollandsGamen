@@ -1,4 +1,3 @@
-
 function showxspelers(spelletjes) {
     selected_spel = document.getElementById("spel").value
     spelletjes= JSON.parse(spelletjes);
@@ -6,17 +5,18 @@ function showxspelers(spelletjes) {
     nsplr = spelletjes[i]['aantalspelers'];
 
     for (ii = 3; ii <=4; ii++) {
-        if (nsplr >= ii) { 
-            document.getElementById("speler" + ii).style.display = "inline"; 
+        if (nsplr >= ii) {  
             document.getElementById("spelerlabel" + ii).style.display = "inline";
+            document.getElementById("speler" + ii).style.display = "inline";
+            document.getElementById("rol" + ii).style.display = "inline";
         } else {
-            document.getElementById("speler" + ii).style.display = "none"; 
-            document.getElementById("spelerlabel" + ii).style.display = "none";           
+            document.getElementById("spelerlabel" + ii).style.display = "none";
+            document.getElementById("speler" + ii).style.display = "none";
+            document.getElementById("rol" + ii).style.display = "none";
         }
     }
 
     arrol = spelletjes[i]['rollen'].split(";");
-    // alert("l = " + arrol.length);
     if (arrol.length > 1) {
         document.getElementById("rol_hdr").style.display = "inline";
         for (ii = 1; ii <= nsplr; ii++) {
