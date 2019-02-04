@@ -34,7 +34,7 @@
      <!--links-->       
         
         <div class="col-md-6">
-            <h5 style="color:#24a;font-weight:bold">Reserveer hier een spel<br> En stuur de uitnodiging per mail naar uw medespeler(s)</h5>
+            <h5 style="color:#24a;font-weight:bold">Reserveer hier een spel,<br>en stuur de uitnodiging per mail naar uw medespeler(s)</h5>
     
 
             <form id="form_speleruitnodigen" method="post" action="{{ route('actiefspeltoevoegen') }}" style="margin-top:40px">
