@@ -4,6 +4,7 @@
     use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Database\Migrations\Migration; 
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Http\Request;
     use \App\Spelletje;
     use \App\User_Relation;
     use \App\User;
@@ -28,7 +29,11 @@ class KeuzeController extends Controller
     }
 
     public function naarChat($vriend){
-        $gebruiker = Auth::user()->gebr_naam;
-        return redirect ('/profiel');
+        $gebruiker = Auth::user();
+        $vriend = User::where('gebr_naam', $vriend)->first();
+
+        return view('chat',[
+            'gebruiker' => $gebruiker, 
+            'vriend' => $vriend]);
     }
 }

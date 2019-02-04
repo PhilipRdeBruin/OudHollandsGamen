@@ -63,7 +63,7 @@ Route::get('spelreserveren', function() {
    return view('spelreserveren');
 });
 
-Route::post('keuzevrienduitnodiging/{vriend}, keuzeController@naarChat')->name('naarChat');
+Route::post('chat/{vriend}', 'KeuzeController@naarChat')->name('naarChat');
 
 Route::post('vriendentoevoegen', 'MailController@mailvriendtoevoegen')->name('vriendtoevoegen');
 
