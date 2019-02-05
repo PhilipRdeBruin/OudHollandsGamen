@@ -16,7 +16,6 @@ use App\Mail\SpelAccepteren;
 class ActievespelController extends Controller
 {
    public function actiefspeltoevoegen (Request $request)  {
-//       dd($request);
         $spelletje = Spelletje::where('id', $request->input('spel'))->first();
         $actiefspel = new Actievespelletje(); 
         $actiefspel->spel_id = $spelletje->id;

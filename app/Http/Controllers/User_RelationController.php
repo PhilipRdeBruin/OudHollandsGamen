@@ -40,4 +40,5 @@ class User_RelationController extends Controller
             'vriend' => ['required','unique:users_relations'],
         ]);
       }
+    
 }

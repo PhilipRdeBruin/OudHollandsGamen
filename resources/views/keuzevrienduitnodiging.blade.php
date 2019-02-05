@@ -150,13 +150,16 @@
         $txt = "Er zijn momenteel geen vrienden van u online."
     @endif -->
 
+    
     <?php
+
         if ($user->vrienden->count() > 0) {
             $txt = "Hieronder ziet uw uw vrienden die op dit moment online zijn.";
         } else {
             $txt = "Er zijn momenteel geen vrienden van u online.";
         }
     ?>
+    
 
     <div class="col-md-4 col-md-offset-2">
         <div class="row justify-content-center md-4">
@@ -164,12 +167,8 @@
         <br>
     </div>
 
-        
-        
 <div class="row">                    
-
-
-                      
+            
         @foreach($user->vrienden as $vriend)
             @if($vriend->isOnline())
 
@@ -194,10 +193,6 @@
             @endif
         @endforeach
             
-        </div>
-    
-
-                    
-         
+        </div>     
 
 @endsection
