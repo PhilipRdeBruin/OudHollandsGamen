@@ -236,18 +236,6 @@
                         @endforeach 
                        
          
-                             @foreach($user->vriendenReverse as $gebruiker)
-                       
-                    <?php 
-                        $vn=$gebruiker->voornaam;
-                        $tv=($gebruiker->tussenv != NULL) ? " " . $gebruiker->tussenv : "" ;
-                        $an=$gebruiker->achternaam;
-                        $vrienden=$vn.$tv. " " . $an;
-           
-                            ?>
-                                
-                        <option value="{{$gebruiker->id}}">{{$vrienden}}</option>
-                        @endforeach 
                             </select>
                          </div>   
                             
