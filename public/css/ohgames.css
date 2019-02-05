@@ -70,6 +70,10 @@
     background      : #46d;
 }
 
+.form-control {
+    width: 80%;
+}
+
 .header-biedingen {
     color           : #24a;
 }
@@ -331,6 +335,26 @@
     border-radius   : 5px; 
 }
 
+#speler3, #speler4 {
+    /* visibility      : hidden; */
+    display         : none;
+}
+
+#spelerlabel3, #spelerlabel4 {
+    /* visibility      : hidden; */
+    display         : none;
+}
+
+#rol1, #rol2, #rol3, #rol4 {
+    /* visibility      : hidden; */
+    display         : none;
+}
+
+#rol_hdr {
+    padding          : 0 50px;
+    display          : none;
+}
+
 .spelknoppen {
     margin-top      : 10px;
     margin-left     : 0%;
@@ -354,7 +378,7 @@
 }
 
 #form_speleruitnodigen {
-    width: 75%;
+    width: 90%;
     padding: 20px;
     background: #ddd;
     border: 1px solid #bbb;
