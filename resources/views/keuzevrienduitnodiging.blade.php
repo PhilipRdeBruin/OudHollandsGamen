@@ -163,7 +163,7 @@
         <?php $nvr = 0; ?>              
         @foreach($user->vrienden as $vriend)
             @if($vriend->isOnline())
-                $nvr++;
+                <?php $nvr++; ?>
                 <form action = "{{ route('naarChat', ['vriend' => $vriend->gebr_naam ]) }}" method = "POST" > 
                 @csrf    
                     <div class="card mt-4">   
