@@ -16,7 +16,7 @@
         <div class="vriendHeader">
             <h2 style="margin-top:2vmin">Vrienden</h2>
         </div>
-        <div class="vriendButton">
+        <div class="vriendButton" onclick="document.location='/vriendtoevoegen'">
             <h1 style="margin-top:-2vmin;padding-top:0">+</h1>
         </div>
         <div class="custom select">
@@ -134,6 +134,9 @@
                         <strong>{{ $errors->first('email') }}</strong>
                         </span>
                         @endif
+                        <button type="submit" class="btn btn-primary">
+                                    {{ __('updaten van uw gegevens') }}
+                                </button>
                     </form>
                 </td>
             </table>
