@@ -21,6 +21,7 @@ class User extends Authenticatable
         'voornaam', 'initialen', 'tussenv', 'achternaam',
         'straatnaam', 'huisnummer', 'postcode', 'woonplaats',
         'telefoon', 'mobiel', 'loged_in_at', 'loged_out_at',
+        'foto'
     ];
 
     /**

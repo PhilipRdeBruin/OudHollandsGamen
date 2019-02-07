@@ -43,6 +43,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => ['auth']], function() {
    Route::put('/profiel', 'ProfielController@update')->name('profiel.update');
+  
 });
   Route::get('profiel', 'ProfielController@profiel')->name('profiel');
 
