@@ -5,22 +5,41 @@
 
 @extends('layouts.standaard')
 @section('content')
+
+<div id="main">
+            <div id="spel">
+                <div id="spelinfo">
+                    <div id="spelimg" class="spelimg{{$spelletje->id}}">
+                        <h6>{{$spelletje->spel_naam}}</h6>
+                    </div>
+                    <p>Welkom bij schaken. Bekijk hier onder wie er ook wachten op een spel. Klik op een andere speler om hem/haar uit te nodigen.<br><br>
+                    Schaken is een bordspel voor 2 personen, waarbij de ene speler met wit speelt en de ander met zwart. Aan het begin van het spel hebben beide spelers 16 stukken: 1 koning, 1 dame, 2 torens, 2 lopers, 2 paarden en 8 pionnen.<br><br>
+                    <b>Doel van het spel</b><br>
+                    Het doel van schaken is om de tegenstander mat te zetten. Mat wil zeggen dat de koning schaak staat en geen zet meer kan doen waarbij hij zichzelf niet opnieuw schaak zet. De partij die schaakmat staat, heeft verloren.</p>
+                </div>
+                <div id="spelers">
+                    <div id="vs">
+                        <div id="invite" onclick="invitePlayers()">
+                        <p>FIGHT</p>
+                        </div>
+                    </div>
+                    <div class="onlinespacer" style="height:1.9%"></div>
+                    <div id="online">
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     <!--HIDDEN FORM-->
     <form id="hiddenform" method="POST" action="">
         <input id="input_act_spel" type="text" name="act_spel"></input>
         <input id="input_speler" type="text" name="speler"></input>
     </form>
 
-    <h1 id="players"></h1>
-    <ul id="queue">
-    </ul>
-    <div id="invite">
-        <button onclick="invitePlayers()">Invite</button>
-    </div>
-
     <div id="modalbg">
         <div id="modal">
-            <h3 id="modalhead"></h3>
+            <p id="modalhead"></p>
             <p id="modaltext"></p>
             <div id="status"></div>
             <div style="clear: both"></div>
@@ -41,15 +60,25 @@
     <script>
     var gamesAvailable = {
     1: 2,
+    2: 2,
     3: 2,
-    chess: 2,
-    voer: 4,
-    template: 2
+    4: 2,
+    5: 2,
+    6: 2,
+    7: 2,
+    8: 2,
+    9: 2,
+    10: 2,
+    11: 2,
+    12: 2,
+    13: 2,
+    14: 2,
+    15: 2,
+    16: 2,
 };
 
 
 var user = {!! json_encode($gebruiker->gebr_naam) !!};
-document.getElementById("players").innerHTML = `Welcome, ${user}. Players in queue:`
 var game = {!! json_encode($spelletje->id) !!};
 var players = [user]
 var queuesocket = io('http://localhost:3000/queue');
@@ -66,16 +95,26 @@ queuesocket.on('queue', function(data) {
     for (i = 0; i < Object.keys(data).length; i++) {
         if (Object.keys(data)[i] != user) {
             if (data[Object.keys(data)[i]][2] == "available") {
-                var classes = `class="pointer available"`;
+                var classes1 = `class="speler pointer"`;
+                var classes2 = `class="spelerstatus available"`;
                 var onclick = `onclick="selectPlayer(this)"`
             } else {
-                var classes = `class="unavailable"`;
+                var classes1 = `class="speler"`;
+                var classes2 = `class="spelerstatus unavailable"`;
                 var onclick = ""
             }
-            holder += `<li ${classes} ${onclick}>${Object.keys(data)[i]}</li>`;
+            // holder += `<li ${classes} ${onclick}>${Object.keys(data)[i]}</li>`;
+            holder += `<div ${classes1} ${onclick}>
+                             <div ${classes2}></div>
+                             <p>${Object.keys(data)[i]}</p>
+                             <div class="invite">
+                                 <p>Selecteer</p>
+                             </div>
+                         </div>
+                         <div class="onlinespacer"></div>`;
         }
         if (players.indexOf(Object.keys(data)[i]) > 0 && data[Object.keys(data)[i]][2] == "unavailable") {
-            var selected = document.getElementById("queue").childNodes
+            var selected = document.getElementById("online").childNodes
             for (i = 0; i < selected.length; i++) {
                 if (selected[i].classList.contains("selected")) {
                     selected[i].classList.remove("selected");
@@ -86,9 +125,13 @@ queuesocket.on('queue', function(data) {
         }
     }
     if (holder) {
-        document.getElementById("queue").innerHTML = holder;
+        document.getElementById("online").innerHTML = holder;
     } else {
-        document.getElementById("queue").innerHTML = `Queue for ${game} is empty. Please wait or find another game to play`;
+        document.getElementById("online").innerHTML = `<div class="speler">
+                             <div class="spelerstatus unavailable"></div>
+                             <p>Noone online</p>
+                         </div>
+                         <div class="onlinespacer"></div>`;
     }
 });
 
@@ -109,7 +152,8 @@ queuesocket.on('invited', function(data) {
     document.getElementById("input_act_spel").value = 124;
     document.getElementById("input_speler").value = user;
     document.getElementById("hiddenform").action = `http://sockets.styx.gg/${game}.php`;
-    var selected = document.getElementById("queue").childNodes
+    var selected = document.getElementById("online").childNodes[0]
+    console.log(selected)
     for (i = 0; i < selected.length; i++) {
         if (selected[i].classList.contains("selected")) {
             selected[i].classList.remove("selected");
@@ -158,16 +202,17 @@ function acceptInv() {
 function selectPlayer(x) {
     if (x.classList.contains("selected")) {
         x.classList.remove("selected");
-        players.splice(players.indexOf(x.innerHTML), 1);
+        players.splice(players.indexOf(x.childNodes[3].innerHTML), 1);
     } else if (players.length < gamesAvailable[game]) {
         x.classList.add("selected");
-        players.push(x.innerHTML);
+        players.push(x.childNodes[3].innerHTML);
     }
     if (players.length < gamesAvailable[game]) {
         document.getElementById("invite").style.display = "none";
     } else {
         document.getElementById("invite").style.display = "block"
     }
+    console.log(players)
 };
 
 function renderStatus() {

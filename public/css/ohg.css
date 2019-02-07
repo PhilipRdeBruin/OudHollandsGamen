@@ -212,12 +212,13 @@ h3{
 nav{
     float:right;
     height:4vh;
-    margin-top:4vh;
+    margin-top:5vh;
     margin-right:2vw;
 }
-nav a{
+nav a, nav a:hover{
 font-size:18px;
 text-decoration: none;
+font-weight:600;
 color:white;
 margin-left:50px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
@@ -255,9 +256,75 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 	background-color:rgba(0,0,0,0.6);
 	overflow:hidden;
 }
-.chess{
+/* .chess{
     background-image:url('../afbeeldingen/game.jpg')
+} */
+
+.spel1 {
+    background-image:url('/afbeeldingen/spellen/spel1.png')
 }
+
+.spel2 {
+    background-image:url('/afbeeldingen/spellen/spel2.png')
+}
+
+.spel3 {
+ 
+   background-image:url('/afbeeldingen/spellen/spel3.png')
+}
+
+.spel4 {
+    background-image:url('/afbeeldingen/spellen/spel4.png')
+}
+
+.spel5 {
+    background-image:url('/afbeeldingen/spellen/spel5.png')
+}
+
+.spel6 {
+    background-image:url('/afbeeldingen/spellen/spel6.png')
+}
+
+.spel7 {
+    background-image:url('/afbeeldingen/spellen/spel7.png')
+}
+
+.spel8 {
+    background-image:url('/afbeeldingen/spellen/spel8.png')
+}
+
+.spel9 {
+    background-image:url('/afbeeldingen/spellen/spel9.png')
+}
+
+.spel10 {
+    background-image:url('/afbeeldingen/spellen/spel10.png')
+}
+
+.spel11 {
+    background-image:url('/afbeeldingen/spellen/spel11.png')
+}
+
+.spel12 {
+    background-image:url('/afbeeldingen/spellen/spel12.png')
+}
+
+.spel13 {
+    background-image:url('/afbeeldingen/spellen/spel13.png')
+}
+
+.spel14 {
+    background-image:url('/afbeeldingen/spellen/spel14.png')
+}
+
+.spel15 {
+    background-image:url('/afbeeldingen/spellen/spel15.png')
+}
+
+.spel16 {
+    background-image:url('/afbeeldingen/spellen/spel16.png')
+}
+
 h4{
     color:#FFF;
 	font-size:18px;
@@ -388,16 +455,17 @@ h5{
     padding:0;
     background-size:cover;
     background-position: center bottom;
+    overflow:hidden;
 }
 #vs{
-    background-image: url('vs.jpg');
+    background-image: url('../afbeeldingen/vs.jpg');
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     background-position: center center;
 }
-.schaak {
-    background-image: url('schaken.jpg')
+.spelimg11 {
+    background-image: url('../afbeeldingen/schaken.jpg')
 }
 
 #spelinfo p {
@@ -435,7 +503,13 @@ h6{
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
-    cursor:pointer;
+}
+.selected {
+    background-color:rgba(0,0,0,0.1);
+ 
+}
+.selected p {
+    color:darkblue;
 }
 .spelerstatus{
     width:16px;
@@ -713,3 +787,343 @@ h6{
     font-size:8vmin;
     text-align:center;
 }
+  #invite{
+    position:absolute;
+    display:none;
+    width:100%;
+    background-color:rgba(0,0,0,0.7);
+    bottom:0;
+    height:36px;
+    cursor:pointer;
+    }
+#invite p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    font-size:17px;
+    padding:0;
+    color:white;
+    font-weight: 700;
+    padding: 6px 0 6px 0;
+    width:100%;
+    text-align: center;
+}
+#status{
+    margin-left:auto;
+    margin-right:auto;
+}
+.queuestatus {
+    width:40px;
+    height:40px;
+    background-color:grey;
+    margin:10px;
+    float:left
+}
+.accepted {
+    background-color:green;
+}
+.declined {
+    background-color:red;
+}
+#modalbg {
+position: absolute;
+z-index:100;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background-color:rgba(0,0,0,0.5);
+display:none;
+}
+#modal {
+width:350px;
+height:230px;
+position: relative;
+margin-left:auto;
+margin-right:auto;
+margin-top:calc(50vh - 100px);
+background-color:white;
+box-sizing:border-box;
+padding:20px;
+-webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.5);
+}
+#invitebuttons {
+display:none;
+margin-left:10px;
+margin-top:20px;
+}
+#confirmbuttons {
+display:none;
+margin-left:10px;
+margin-top:20px;
+}
+#closebuttons {
+display:none;
+margin-left:10px;
+margin-top:20px;
+}
+#hiddenform{
+display:none;
+}
+.unavailable {
+    color:red;
+    cursor:default;
+}
+.pointer{
+    cursor: pointer;
+}
+
+
+/* PROFIEL */
+
+ hr.new1{
+     border: 0.8px dotted grey;
+ }
+ .profielBlok{
+     float: left;
+     width: 47vw;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+     height:calc(100% - 4vw);
+     padding:0;
+     margin:2vw 0 0 2vw;
+     background-color:rgba(0,0,0,0.15);
+     overflow-y:auto;
+     text-align: center;
+     font-family: sans-serif;
+ }
+ .profielGegevens{
+     float: left;
+     right:2vw;
+     width: 50%;
+     border-radius: 5px;
+     padding:0;
+     margin:0.2vw 0 0 0;
+     text-align: center;
+     font-family: sans-serif;
+ }
+ .profiel2{
+     float: left;
+     right:2vw;
+     width: 50%;
+     border-radius: 5px;
+     padding:0;
+     margin:0.2vw 0 0 0;
+     text-align: center;
+     font-family: sans-serif;
+ }
+ .vriendBlok {
+     float:left;
+     width: 47vw;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+     height:calc(100% - 4vw);
+     padding:0;
+     overflow-y:auto;
+     margin:2vw 0 0 2vw;
+     background-color:rgba(0,0,0,0.15);
+     text-align: center;
+ }
+ .vriendSelectie{
+     float: left;
+     right: 2vw;
+     width: 50%;
+     border-radius: 5px;
+     padding:0;
+     margin:0.2vw 0 0 0;
+     text-align: center;
+     font-family: sans-serif;
+ }
+ .vriendSelectie1{
+     float: left;
+     right: 2vw;
+     width: 50%;
+     border-radius: 5px;
+     padding:0;
+     margin:0.2vw 0 0 0;
+     text-align: center;
+     font-family: sans-serif;
+ }
+ .informatieBlok {
+     font-family: 'Lato', sans-serif;
+     color: black;
+     
+ }
+ .welkomTekst {
+     font-family: 'Lato', sans-serif;
+     font-size: 19px;
+     color: #598c52;
+     float: left;
+     margin: 1.5vw 1vw 0vw 18vw;  
+     position: fixed;
+     top:calc(10vh + 20px);
+     left:20vw;
+     width: 27%;
+ }
+ #profielFoto {
+     background-image:url(profielfoto.jpg);
+     background-size:cover;
+     background-position: center center; 
+     width: 125px;
+     height: 200px;
+     float: right;
+     margin: 1.5vw 1vw 0vw 0vw;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     border-radius: 7px;
+ }
+ .profielLabel{
+     font-family: 'Lato', sans-serif;
+     text-align: left;
+     font-size: 19px;
+     color: white;
+     width: auto;
+     height: 11px;
+     margin: 1vw 0vw 0vw 3vw;
+ /*
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     border-radius: 7px;   
+ */
+ }
+ .profielLabela {
+     font-family: 'Lato', sans-serif;
+     text-align: right;
+     font-size: 3vmin;
+     color: white;
+     width: auto;
+     height: 11px;
+     margin: -1vw -7.3vw 0vw 0vw;
+ }
+ .invoerLabel {
+     text-align: center;
+     font-family: 'Lato', sans-serif;
+     font-size: 1.8vmin;
+     color:#108ea7;
+     background-color: #e8e8e8;
+     width: 250px;
+     height: 27px;
+     margin: 1vw 1vw 0vw 3vw;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+    border-radius: 7px; 
+ }
+ .invoerLabela {
+     text-align: center;
+     font-family: 'Lato', sans-serif;
+     font-size: 3vmin;
+     color:#108ea7;
+     background-color: #e8e8e8;
+     width: 60px;
+     height: 27px;
+     margin: 1vw 0vw 0vw 18.3vw;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    border-radius: 3px; 
+ }
+ .profielButton {
+     position:relative;
+     overflow: auto;
+     width:12vmin;
+     height:12vmin;
+     border-radius:20vmin;
+     background-color:#959393;
+     margin: 35vw 15vw 0vw 15vw;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+ }
+ .profielButton1 {
+     width:7vmin;
+     height:7vmin;
+     border-radius:20vmin;
+     background-color:#108ea7;
+     margin:calc(50% - 3.5vmin) auto 0 auto;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+ }
+ .profielButton2 {
+     width:7vmin;
+     height:7vmin;
+     font-size: 40px;
+     color: #e8e8e8;
+     margin:calc(50% - 3.5vmin) auto 0 auto;
+ }
+ .vriendButton {
+     position:relative;
+     overflow: auto;
+     width:12vmin;
+     height:12vmin;
+     border-radius:20vmin;
+     background-color:#959393;
+     margin: 1.5vw 0vw 0vw 21vw;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+ }
+ .vriendButton1 {
+     width:7vmin;
+     height:7vmin;
+     border-radius:20vmin;
+     background-color:#108ea7;
+     margin:calc(50% - 3.5vmin) auto 0 auto;
+     -webkit-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     -moz-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+     box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+ }
+ .vriendButton2 {
+     width:7vmin;
+     height:7vmin;
+     font-size: 40px;
+     color: #e8e8e8;
+     margin:calc(50% - 3.5vmin) auto 0 auto;
+ }
+     
+ .VriendUitnodigen {
+     position: fixed;
+     top:calc(20vh + 20px);
+     left:2vw;
+     width: 28%;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+     height:calc(70vh - (10vh + 20px + 10vw));
+     padding:0;
+     margin:2vw 0 0 0;
+     background-color:rgba(0,0,0,0.15);
+ }
+ .VriendToevoegen {
+     position: fixed;
+     top:calc(20vh + 20px);
+     right:2vw;
+     width: 28%;
+     border-radius: 5px;
+     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+     height:calc(70vh - (10vh + 20px + 10vw));
+     padding:0;
+     margin:2vw 0 0 0;
+     background-color:rgba(0,0,0,0.15);
+ }
+ .uitnodigingtekst {
+     font-family: 'Lato', sans-serif;
+     font-size: 19px;
+     color: #598c52;
+     float: left;
+     margin: 1.5vw 1vw 0vw 18vw;  
+     position: fixed;
+     top:calc(10vh + 20px);
+     left:20vw;
+     width: 27%;
+ }
+ .customselect    {
+     display: none;
+     font-family: 'Lato', sans-serif;
+     font-size: 19px;
+     position: absolute;
+     width: 10%;
+ }
