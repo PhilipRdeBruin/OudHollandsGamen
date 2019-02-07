@@ -7,7 +7,7 @@
                     <a href="/login">Login</a>
                     <a href="/register">Register</a>
                 @else
-                <a href="/profile">{{ Auth::user()->gebr_naam }}</a>
+                <a href="/profiel">{{ Auth::user()->gebr_naam }}</a>
                 <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
