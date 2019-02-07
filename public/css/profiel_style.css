@@ -1,0 +1,195 @@
+.profielBlok{
+    float: left;
+    width: 47vw;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    height:calc(100vh - (15vh + 20px + 4vw));
+    padding:0;
+    margin:2vw 0 0 2vw;
+    background-color:rgba(0,0,0,0.15);
+    overflow-y:auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.profielGegevens{
+    float: left;
+    right:2vw;
+    width: 50%;
+    border-radius: 5px;
+    height:calc(100vh - (5vh + 10px + 4vw));
+    padding:0;
+    margin:0.2vw 0 0 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.profiel2{
+    float: left;
+    right:2vw;
+    width: 50%;
+    border-radius: 5px;
+    height:calc(100vh - (5vh + 10px + 4vw));
+    padding:0;
+    margin:0.2vw 0 0 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.vriendBlok {
+    float:left;
+    width: 47vw;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    height:calc(100vh - (15vh + 20px + 4vw));
+    padding:0;
+    overflow-y:auto;
+    margin:2vw 0 0 2vw;
+    background-color:rgba(0,0,0,0.15);
+}
+.informatieBlok {
+    font-family: 'Lato', sans-serif;
+    color: black;
+    
+}
+.welkomTekst {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    color: #598c52;
+    float: left;
+    margin: 1.5vw 1vw 0vw 18vw;  
+    position: fixed;
+    top:calc(10vh + 20px);
+    left:20vw;
+    width: 27%;
+}
+#profielFoto {
+    background-image:url(profielfoto.jpg);
+    background-size:cover;
+    background-position: center center; 
+    width: 125px;
+    height: 200px;
+    float: right;
+    margin: 1.5vw 1vw 0vw 0vw;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    border-radius: 7px;
+}
+.profielLabel{
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    font-size: 19px;
+    color: white;
+    width: auto;
+    height: 11px;
+    margin: 1vw 0vw 0vw 3vw;
+/*
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    border-radius: 7px;   
+*/
+}
+.profielLabela {
+    font-family: 'Lato', sans-serif;
+    text-align: right;
+    font-size: 19px;
+    color: white;
+    width: auto;
+    height: 11px;
+    margin: -1vw -7.3vw 0vw 0vw;
+}
+
+.invoerLabel {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    background-color: #e8e8e8;
+    width: 250px;
+    height: 27px;
+    margin: 1vw 1vw 0vw 3vw;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+   border-radius: 7px; 
+}
+.invoerLabela {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    background-color: #e8e8e8;
+    width: 60px;
+    height: 27px;
+    margin: 1vw 0vw 0vw 18.3vw;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+   border-radius: 3px; 
+}
+.profielButton {
+    position:relative;
+    overflow: auto;
+    width:12vmin;
+    height:12vmin;
+    border-radius:20vmin;
+    background-color:#b7b7b7;
+    margin: 1vw 15vw 0vw 15vw;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+    box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+}
+.profielButton1 {
+    width:7vmin;
+    height:7vmin;
+    border-radius:20vmin;
+    background-color:#108ea7;
+    margin:calc(50% - 3.5vmin) auto 0 auto;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+    box-shadow: 0px 0px 10px 1px rgba(5,5,5,5);
+}
+
+/*
+#profielButton {
+    background-image:url(refresh%20button.png);
+    width: 100px;
+    height: 100px;
+    background-size:cover;
+    background-position: center center;
+    margin: 0vw 0vw 0vw 17.3vw;
+}
+*/
+    
+.VriendUitnodigen {
+    position: fixed;
+    top:calc(20vh + 20px);
+    left:2vw;
+    width: 28%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    height:calc(70vh - (10vh + 20px + 10vw));
+    padding:0;
+    margin:2vw 0 0 0;
+    background-color:rgba(0,0,0,0.15);
+}
+.VriendToevoegen {
+    position: fixed;
+    top:calc(20vh + 20px);
+    right:2vw;
+    width: 28%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    height:calc(70vh - (10vh + 20px + 10vw));
+    padding:0;
+    margin:2vw 0 0 0;
+    background-color:rgba(0,0,0,0.15);
+}
+.uitnodigingtekst {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    color: #598c52;
+    float: left;
+    margin: 1.5vw 1vw 0vw 18vw;  
+    position: fixed;
+    top:calc(10vh + 20px);
+    left:20vw;
+    width: 27%;

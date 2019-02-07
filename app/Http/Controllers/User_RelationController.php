@@ -17,7 +17,6 @@ class User_RelationController extends Controller
                                
     public function vriendtoevoegen(Request $request)
     {
-        //get user id from post
         $vriend = $request->input('vriend');
         $gebruiker = Auth::user();
 
@@ -32,9 +31,6 @@ class User_RelationController extends Controller
 
         $gebr_vriend = User_Relation::where('gebruiker', $gebruiker_id)->where('vriend', $vriend_id)->first();
         $vriend_gebr = User_Relation::where('vriend', $gebruiker_id)->where('gebruiker', $vriend_id)->first();
-    
-        
-//        dd($gebr_gebr);
 
         if (!$gebr_vriend && !$vriend_gebr && $gebruiker_id != $vriend_id) {
         	$gebruiker->voegVriendToe($vriend);

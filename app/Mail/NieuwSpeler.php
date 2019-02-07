@@ -42,6 +42,3 @@ class NieuwSpeler extends Mailable
           ]);
     }
 }
-
-
-   

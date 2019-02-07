@@ -4,7 +4,7 @@
 @endif
 <?php $act_lnk = init_ActiveLinks($active_navlink) ?>
     <div class="mr-auto"> </div>
-     <a class="navbar-brand mx-auto" id="titel"><b><i>Oud Hollandse Spelletjes</i></b></a>
+     <a class="navbar-brand mx-auto" id="titel"><b>Oud Hollands Gamen</b></a>
 
 
 
