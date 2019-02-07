@@ -22,17 +22,7 @@
 
 @section('content')
 
-    <header>           
-        <div id="head">
-            <div id="logo">
-            </div>
-            <nav>
-                <a href="">Login</a>
-                <a href="">Register</a>
-            </nav>
-        </div>
-    </header>
-
+   
     <div id="main">
                     
         <div class="KenUit">                        
@@ -42,12 +32,12 @@
         <div id="choice">
 
 <!--links- form om spel te reserveren-->  
-            <div  class = "KVUlhelften">
+            <div  class = "KVUhelften">
                 <h4 class="KVUleft">
                             Reserveer hier een spel<br> en stuur de uitnodiging per mail naar uw medespeler(s)
                 </h4>
-                    
-                <form id="form_speleruitnodigen" method="post" action="{{ route('actiefspeltoevoegen') }}">
+                 <div  id="formP">  
+                <form  method="post" action="{{ route('actiefspeltoevoegen') }}">
                     @csrf
                     <table>
                         <tr>
@@ -114,6 +104,7 @@
                     </table>
                     <input id="speluitnodigenknop" class="profielLabelKVU"  type="submit" value="Uitnodiging versturen">
                 </form>
+                </div>
             </div>
             <div id="spelletjes" style="display:none">{{ $spelletjes}}</div>
                 <script>
@@ -126,7 +117,7 @@
                 
 <!--rechts-->
 
-            <div class = "KVUlhelften">
+            <div class = "KVUhelften">
                 <?php
                     if ($user->vrienden->count() > 0) {
                         $txt = "Hieronder ziet uw uw vrienden die op dit moment online zijn.";

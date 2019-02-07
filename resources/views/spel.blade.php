@@ -26,7 +26,12 @@
                     </div>
                 </div>
             </div>
+            <div class="onlinespacer" style="height:1.9%"></div>
+            <div id="online">                    
+            </div>
         </div>
+    </div>
+</div>
         
     <!--HIDDEN FORM-->
     <form id="hiddenform" method="POST" action="">
