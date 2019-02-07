@@ -8,7 +8,7 @@
 
 <div id="main">
             <div id="choice">
-                <div id="friends">
+                <div id="friends" onclick="location.href='/keuzevrienduitnodiging'">
                     <div class="spacer"></div>
                     <div class="title">
                             <div id="arrowleft">
