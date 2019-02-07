@@ -20,10 +20,10 @@
 <script>
 function vraagTekst() {
   var x = document.getElementById("vraagtekst");
-  if (x.style.display === "none") {
-    x.style.display = "blok";
-  } else {
+  if (x.style.display === "block") {
     x.style.display = "none";
+  } else {
+    x.style.display = "block";
   }
 }
 </script>

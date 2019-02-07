@@ -20,3 +20,8 @@
 <link rel = "stylesheet" href = "{{ asset('css/ohg.css') }}"/>
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/functions/php_functies.php'); ?>
+
+<!-- lay out Hergen-->
+
+<link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+<link rel="stylesheet"  href="{{ asset('css/KVU.css') }}" />
