@@ -12,10 +12,7 @@
                     <div id="spelimg" class="spelimg{{$spelletje->id}}">
                         <h6>{{$spelletje->spel_naam}}</h6>
                     </div>
-                    <p>Welkom bij schaken. Bekijk hier onder wie er ook wachten op een spel. Klik op een andere speler om hem/haar uit te nodigen.<br><br>
-                    Schaken is een bordspel voor 2 personen, waarbij de ene speler met wit speelt en de ander met zwart. Aan het begin van het spel hebben beide spelers 16 stukken: 1 koning, 1 dame, 2 torens, 2 lopers, 2 paarden en 8 pionnen.<br><br>
-                    <b>Doel van het spel</b><br>
-                    Het doel van schaken is om de tegenstander mat te zetten. Mat wil zeggen dat de koning schaak staat en geen zet meer kan doen waarbij hij zichzelf niet opnieuw schaak zet. De partij die schaakmat staat, heeft verloren.</p>
+                    <p>{{ $spelletje->spelUitleg }}</p>
                 </div>
                 <div id="spelers">
                     <div id="vs">

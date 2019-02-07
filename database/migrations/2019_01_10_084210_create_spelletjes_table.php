@@ -19,6 +19,7 @@ class CreateSpelletjesTable extends Migration
             $table->string('link', 191);
             $table->unsignedInteger('aantalspelers');
             $table->timestamps();
+            $table->text('spelUitleg')
         });
     }
 
