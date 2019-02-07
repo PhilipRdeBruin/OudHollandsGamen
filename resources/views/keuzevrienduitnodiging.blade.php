@@ -42,8 +42,8 @@
         <div id="choice">
 
 <!--links- form om spel te reserveren-->  
-            <div id="friends">
-                <h4 class="left">
+            <div  class = "KVUlhelften">
+                <h4 class="KVUleft">
                             Reserveer hier een spel<br> en stuur de uitnodiging per mail naar uw medespeler(s)
                 </h4>
                     
@@ -51,9 +51,9 @@
                     @csrf
                     <table>
                         <tr>
-                            <td class = "profielLabel">spel:</td>                        
+                            <td class = "profielLabelKVU">spel:</td>                        
                             <td>
-                                <select class="invoerLabel"  onchange="showxspelers('{{ $spelletjes }}')" name="spel" id="spel">
+                                <select class="invoerLabelKVU"  onchange="showxspelers('{{ $spelletjes }}')" name="spel" id="spel">
                                     <option value="leeg" selected></option>
                                     @foreach($spelletjes as $value)
                                         <option value="{{ $value->id }}">{{ $value->spel_naam }}</option>
@@ -65,7 +65,7 @@
 
                         @for ($i=1; $i<=4; $i++)
                             <tr>
-                                <td class="profielLabel">
+                                <td class="profielLabelKVU">
                                     @if ($i == 1)
                                         gastheer:
                                     @else
@@ -73,7 +73,7 @@
                                     @endif
                                 </td>                        
                                 <td>
-                                    <select class="invoerLabel" name="speler[]" id="speler{{ $i }}">
+                                    <select class="invoerLabelKVU" name="speler[]" id="speler{{ $i }}">
 
                                         <?php
                                             $vn = Auth::user()->voornaam;
@@ -108,11 +108,11 @@
                         @endfor
 
                         <tr>
-                            <td  class="profielLabel">aanvangstijdstip:</td>
-                            <td  class="invoerLabel"><input type="datetime" name="aanvangstijdstip"></td>
+                            <td  class="profielLabelKVU">aanvangstijdstip:</td>
+                            <td  class="invoerLabelKVU"><input type="datetime" name="aanvangstijdstip"></td>
                         </tr>
                     </table>
-                    <input id="speluitnodigenknop" class="profielLabel"  type="submit" value="Uitnodiging versturen">
+                    <input id="speluitnodigenknop" class="profielLabelKVU"  type="submit" value="Uitnodiging versturen">
                 </form>
             </div>
             <div id="spelletjes" style="display:none">{{ $spelletjes}}</div>
@@ -126,7 +126,7 @@
                 
 <!--rechts-->
 
-            <div id="game">
+            <div class = "KVUlhelften">
                 <?php
                     if ($user->vrienden->count() > 0) {
                         $txt = "Hieronder ziet uw uw vrienden die op dit moment online zijn.";
@@ -135,7 +135,7 @@
                     }
                 ?>   
 
-                <h4 class="right">
+                <h4 class="KVUleft">
                     Hieronder ziet uw uw vrienden die op dit moment online zijn.
                 </h4>
 

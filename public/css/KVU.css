@@ -157,7 +157,7 @@ h3{
     transform:rotate(-20deg)
 }
 
-h4{
+.KVUleft{
     font-family: 'Lato', sans-serif;
     padding:0;
     margin:0;
@@ -173,7 +173,7 @@ h4{
     background-color: rgba(0,0,0,0.15);   
 }
 
-.profielLabel{
+.profielLabelKVU{
     width: 200px;
     font-family: 'Lato', sans-serif;
     padding:0;
@@ -185,7 +185,7 @@ h4{
     margin-bottom:2vmin;
 }
 
-.invoerLabel{
+.invoerLabelKVU{
     width: 200px;
     /* margin-top:2vmin; */
     margin-left:2vmin;
@@ -197,10 +197,7 @@ h4{
 }
 
 .vraagtekenTekst{
-    float:left;
-    
-    
-    
+    float:left;    
     font-family: 'Lato', sans-serif;
     color:black;
     font-size:3vmin;
