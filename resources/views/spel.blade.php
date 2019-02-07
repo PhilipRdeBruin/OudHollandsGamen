@@ -7,26 +7,25 @@
 @section('content')
 
 <div id="main">
-            <div id="spel">
-                <div id="spelinfo">
-                    <div id="spelimg" class="spelimg{{$spelletje->id}}">
-                        <h6>{{$spelletje->spel_naam}}</h6>
-                    </div>
-                    <p>{{ $spelletje->spelUitleg }}</p>
-                </div>
-                <div id="spelers">
-                    <div id="vs">
-                        <div id="invite" onclick="invitePlayers()">
-                        <p>FIGHT</p>
-                        </div>
-                    </div>
-                    <div class="onlinespacer" style="height:1.9%"></div>
-                    <div id="online">
-                         
-                    </div>
+    <div id="spel">
+        <div id="spelinfo">
+            <div id="spelimg" class="spelimg{{$spelletje->id}}">
+                <h6>{{$spelletje->spel_naam}}</h6>
+            </div>
+                <p>{{ $spelletje->spelUitleg }}</p>
+        </div>
+        <div id="spelers">
+            <div id="vs">
+                <div id="invite" onclick="invitePlayers()">
+                <p>FIGHT</p>
                 </div>
             </div>
+            <div class="onlinespacer" style="height:1.9%"></div>
+            <div id="online">                    
+            </div>
         </div>
+    </div>
+</div>
         
     <!--HIDDEN FORM-->
     <form id="hiddenform" method="POST" action="">
