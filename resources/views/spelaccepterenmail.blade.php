@@ -8,6 +8,6 @@
     <a href="{{ route('actiefspelaccepteren', ['pivotId' => $pivotId, 'speler' => $speler]) }}">spelbevestigen</a>  
     <p>met vriendelijke groet,<br>
     <b>Oud Hollands Gamen</b><br>
-    <i>De nieuwe online spellensensatie voor ouderen!</i></p>
+    <i>De nieuwe spellensensatie op het internet!</i></p>
 </body>
 </html>
