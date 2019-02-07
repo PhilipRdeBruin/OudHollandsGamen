@@ -60,12 +60,12 @@ header{
 
 }
 #friends{
-    background-image:url(vrienden.jpg);
+    background-image:url(../afbeeldingen/vrienden.jpg);
     background-size:cover;
     background-position: center center;
 }
 #game{
-    background-image:url(game.jpg);
+    background-image:url(../afbeeldingen/game.jpg);
     background-size:cover;
     background-position: center center;
 }
@@ -202,7 +202,7 @@ h3{
 #logo{
     float:left;
     margin-left:2vw;
-    background-image: url(logo.png);
+    background-image: url(../afbeeldingen/logo.png);
     background-size:contain;
     width:200px;
     height:calc(5vh + 20px);
@@ -256,7 +256,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 	overflow:hidden;
 }
 .chess{
-    background-image:url('game.jpg')
+    background-image:url('../afbeeldingen/game.jpg')
 }
 h4{
     color:#FFF;
