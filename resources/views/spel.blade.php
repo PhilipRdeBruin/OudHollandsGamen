@@ -12,7 +12,7 @@
                     <div id="spelimg" class="spelimg{{$spelletje->id}}">
                         <h6>{{$spelletje->spel_naam}}</h6>
                     </div>
-                    <p>{{ $spelletje->spelUitleg }}</p>
+                    <p>{!! nl2br($spelletje->spelUitleg)!!}</p>
                 </div>
                 <div id="spelers">
                     <div id="vs">
