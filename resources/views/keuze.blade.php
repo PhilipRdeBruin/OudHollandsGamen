@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        @if(!empty($actievespellen))
+        @if(isset($actievespellen) && count($actievespellen) > 0)
             <div class="col-md-3" id="actievespellen" style="border:1px solid grey">
                 <h4 id="actspelhdr" style="font-size:20px"><u>Geplande spelletjes</u></h4>
                 @foreach($actievespellen as $actiefspel)
