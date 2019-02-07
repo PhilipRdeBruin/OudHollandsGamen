@@ -24,5 +24,5 @@
 
 <!-- lay out Hergen-->
 
-<link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
-<link rel="stylesheet"  href="{{ asset('css/KVU.css') }}" />
+<!-- <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+<link rel="stylesheet"  href="{{ asset('css/KVU.css') }}" /> -->
