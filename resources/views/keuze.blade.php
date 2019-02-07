@@ -19,7 +19,7 @@
                         </h2>
                     </div>
                 </div>
-                <div id="game">
+                <div id="game" onclick="location.href='/spelkeuze'">
                         <div class="spacer"></div>
                     <div class="title">
                             <div id="arrowright">

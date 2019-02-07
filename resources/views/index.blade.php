@@ -6,6 +6,12 @@
         <link rel = "stylesheet" href = "{{ asset('css/ohg.css') }}"/>
     </head>
     <body>
+    @guest
+    @else
+    <script>
+    location.href='/keuze';
+    </script>
+    @endguest
         <div class="myVideo">
             <video src="{{asset('mp4/chess.mp4')}}" type="video/mp4" autoplay muted loop></video>
         </div>
