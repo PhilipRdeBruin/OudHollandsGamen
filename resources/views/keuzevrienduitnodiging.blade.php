@@ -9,124 +9,153 @@
     $vrienden = \App\User::All();
     $spelletjes = \App\Spelletje::All();
     $active_navlink = 'keuzevrienduitnodiging'; 
-    $filterkey = "filter"; 
-  
-  
+    $filterkey = "filter";   
 ?>
 
 
 @extends('layouts.standaard')
-@section('content')
+@section('content') 
 
-<div class="conainer">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6" style="text-align:center">
-            <h1><span class="kl_blauw">Kennis uitnodigen</span></h1><br>
-        </div>
-    </div>
-
-   
-    <div class="row justify-content-center mt-5"> 
-     <!--links- form om spel te reserveren-->       
-        
-        <div class="col-md-6">
-            <h5 style="color:#24a;font-weight:bold">Reserveer hier een spel<br> En stuur de uitnodiging per mail naar uw medespeler(s)</h5>
-    
-
-            <form id="form_speleruitnodigen" method="post" action="/spelkeuze" style="margin-top:40px">
-                @csrf
-                <table>
-                    <tr>
-                        <td style="width:200px">spel:</td>                        
-                        <td>
-                            <select class="form-control" name="spel" id="spel">
-                                <option value="leeg" selected></option>
-                                @foreach($spelletjes as $value)
-                                    <option value="{{ $value->id }}">{{ $value->spel_naam }}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                    </tr>
-
-                    @for ($i=1; $i<=4; $i++)
-                        <tr>
-                            <td>
-                                @if ($i == 1)
-                                    gastheer:
-                                @else
-                                    speler{{ $i }}:
-                                @endif
-                            </td>                        
-                            <td>
-                                <select class="form-control" name="speler[]" id="speler{{ $i }}">
-
-                                    <?php
-                                        $vn = Auth::user()->voornaam;
-                                        $tv = (Auth::user()->tussenv != NULL) ? " " . Auth::user()->tussenv : "" ;
-                                        $an = Auth::user()->achternaam;
-                                        $vriendy = $vn . $tv . " " . $an;           
-                                    ?> 
-
-                                    @if ($i == 1) {
-                                        <option value="{{ Auth::id() }}" selected>{{ $vriendy }}</option>
-                                    @else
-                                        <option value="leeg" selected></option>
-                                    @endif
-
-                                    @foreach($user->vrienden as $vriend)
-                                        <?php
-                                            $vn = $vriend->voornaam;
-                                            $tv = ($vriend->tussenv != NULL) ? " " . $vriend->tussenv : "" ;
-                                            $an = $vriend->achternaam;
-                                            $vriendy = $vn . $tv . " " . $an;           
-                                        ?> 
-                                        <option value="{{ $vriend->id }}">{{ $vriendy }}</option>
-                                    @endforeach
-                                </select>
-                            </td>
-                        </tr>
-                    @endfor
-
-                    <tr>
-                        <td>aanvangstijdstip:</td>
-                        <td><input type="datetime" name="aanvangstijdstip"></td>
-                    </tr>
-                </table>
-                <input id="speluitnodigenknop" type="submit" value="Uitnodiging versturen">
-            </form>
-
-                
-    
-    </div>
-        
-    <!--rechts--cards met vrienden online-->   
-    <div class="col-md-4 col-md-offset-2">
-        <div class="row justify-content-center md-4"> 
-        <h5 style="color:#24a;font-weight:bold">Hieronder ziet uw uw vrienden die op dit moment online zijn.</h5>
-        <br>
-    </div>
-
-    <div class="row">                        
-        @foreach($user->vrienden as $vriend)
-            @if($vriend->isOnline())
-
-            <form action = "{{ route('naarChat', ['vriend' => $vriend->gebr_naam ]) }}" method = "POST" > 
-            @csrf    
-                <div class="card mt-4">   
-                    <div class="card-header">                  
-                        <li>{{ $vriend->gebr_naam }}</li>    
-                    </div>
-
-                    <div class="card-body">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                    </div> 
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/KVO.css') }}">
+    </head>
+    <body> -->
+        <header>
+           
+            <div id="head">
+                <div id="logo">
                 </div>
-                <input type = "submit" class="btn btn-primary" value = "Samen overleggen wat te spelen" >
-            </form>
-            @endif
-        @endforeach
-    </div>
+                <nav>
+                    <a href="">Login</a>
+                    <a href="">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <div id="main">
                     
-         
+            <div class="KenUit">                        
+                <h2>Kennis uitnodigen</h2><br>
+            </div>
+                    
+            <div id="choice">
+                <!--links- form om spel te reserveren-->  
+                <div id="friends">
+                    <h4 class="left">
+                                Reserveer hier een spel<br> en stuur de uitnodiging per mail naar uw medespeler(s)
+                    </h4>
+                        
+                    <form id="form_speleruitnodigen" method="post" action="/spelkeuze">
+                        @csrf
+                        <table>
+                            <tr>
+                                <td class = "profielLabel">spel:</td>                        
+                                <td>
+                                    <select class="invoerLabel" name="spel" id="spel">
+                                        <option value="leeg" selected></option>
+                                        @foreach($spelletjes as $value)
+                                            <option value="{{ $value->id }}">{{ $value->spel_naam }}</option>
+                                        @endforeach                                    
+                                    </select>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                            
+                                            <td><option value="leeg" selected></option></td>
+                                        </tr>
+
+                            @for ($i=1; $i<=4; $i++)
+                                <tr>
+                                    <td class="profielLabel">
+                                        @if ($i == 1)
+                                            gastheer:
+                                        @else
+                                            speler{{ $i }}:
+                                        @endif
+                                    </td>                        
+                                    <td>
+                                        <select class="invoerLabel" name="speler[]" id="speler{{ $i }}">
+
+                                            <?php
+                                                $vn = Auth::user()->voornaam;
+                                                $tv = (Auth::user()->tussenv != NULL) ? " " . Auth::user()->tussenv : "" ;
+                                                $an = Auth::user()->achternaam;
+                                                $vriendy = $vn . $tv . " " . $an;           
+                                            ?> 
+
+                                            @if ($i == 1) {
+                                                <option value="{{ Auth::id() }}" selected>{{ $vriendy }}</option>
+                                            @else
+                                                <option value="leeg" selected></option>
+                                            @endif
+
+                                            @foreach($user->vrienden as $vriend)
+                                                <?php
+                                                    $vn = $vriend->voornaam;
+                                                    $tv = ($vriend->tussenv != NULL) ? " " . $vriend->tussenv : "" ;
+                                                    $an = $vriend->achternaam;
+                                                    $vriendy = $vn . $tv . " " . $an;           
+                                                ?> 
+                                                <option value="{{ $vriend->id }}">{{ $vriendy }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                </tr>
+                            @endfor
+
+                            <tr>
+                                <td  class="profielLabel">aanvangstijdstip:</td>
+                                <td  class="invoerLabel"><input type="datetime" name="aanvangstijdstip"></td>
+                            </tr>
+                        </table>
+                        <input id="speluitnodigenknop" class="profielLabel"  type="submit" value="Uitnodiging versturen">
+                    </form>
+                </div>
+
+                <div id="game">
+                    <h4 class="right">
+                        Hieronder ziet uw uw vrienden die op dit moment online zijn.
+                    </h4> 
+                    
+                    @foreach($user->vrienden as $vriend)
+                        @if($vriend->isOnline())
+
+                        <div class = "fromP">
+                            <form id = "vriendOnlineUitnodigen" action = "{{ route('naarChat', ['vriend' => $vriend->gebr_naam ]) }}" method = "POST" onclick = "this.submit()"> 
+                            @csrf    
+                                <div class="vriendOnline" >
+                                    <div class="fotoVriend">
+                                        <img src="{{ asset($vriend->foto) }}" alt="nog geen foto geupload">
+                                    </div> 
+                                    <div class = "naamVriend">
+                                        <ul>
+                                            <li>{{ $vriend->gebr_naam }}</li>                  
+                                        </ul>
+                                    </div> 
+                                    <div class = "naarChat">                                        
+                                        <p>Samen overleggen<br/> en een spel spelen</p> 
+                                    </div>                                      
+                                </div>
+                            </form>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+        </div>   
+    <!-- </body>
+</html>      
+          -->
 
 @endsection
+                         
+
+
+
+
+   
+   

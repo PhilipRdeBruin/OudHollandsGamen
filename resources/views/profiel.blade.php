@@ -1,10 +1,13 @@
 <?php 
     namespace App\Http\Controllers;
+    use Illuminate\Support\Facades\Session;
+    use \App\Spelletje;
+    use App\Http\Controllers\Carbon\Carbon;
     $active_navlink = 'profiel'; 
     $filterkey = "filter";
     $vrienden = \App\User::All();
     $spelletjes = \App\Spelletje::All();
-    use \App\Spelletje;
+    
 ?>
 
 @extends('layouts.standaard')
@@ -38,7 +41,7 @@
                 
             
                         <h6 style="text-align:center"> Dit zijn uw gegevens, indien u wilt kunt u ze aanvullen</h6> 
-                            <form method="POST" action="{{ route('profiel.update') }}">
+                            <form method="POST" action="{{ route('profiel.update') }}" enctype="multipart/form-data" type = "file">
                             @csrf
                             @method('PUT')
                             <div class = "form-group row">                        
@@ -189,16 +192,31 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label name="foto" id = "foto" class="col-md-4 col-form-label text-md-right" type="file"> 
+                            {{ __('foto') }}</label>
+
+                            <div class="col-md-8">
+                                <input id="foto" type="file" 
+                                class="form-control{{ $errors->has('foto') ? ' is-invalid' : '' }}" 
+                                name="foto" value="{{ $user->efoto }}" >                               
+                                     
+                            </div>
+                        </div>
                       
                                                
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('updaten van uw gegevens') }}
+                      
+                                {{ __('updaten van uw gegevens') }}
                                 </button>
                             </div>
-                            </div>
-                            </form>
+                        </div>
+                    </form>
+                    <div>
+                        <img src="{{ asset($user->foto) }}"/>
                 </div>
                 </div>
             </div>
