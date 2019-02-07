@@ -255,9 +255,75 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 	background-color:rgba(0,0,0,0.6);
 	overflow:hidden;
 }
-.chess{
+/* .chess{
     background-image:url('../afbeeldingen/game.jpg')
+} */
+
+.spel1 {
+    background-image:url('/afbeeldingen/spellen/spel1.png')
 }
+
+.spel2 {
+    background-image:url('/afbeeldingen/spellen/spel2.png')
+}
+
+.spel3 {
+ 
+   background-image:url('/afbeeldingen/spellen/spel3.png')
+}
+
+.spel4 {
+    background-image:url('/afbeeldingen/spellen/spel4.png')
+}
+
+.spel5 {
+    background-image:url('/afbeeldingen/spellen/spel5.png')
+}
+
+.spel6 {
+    background-image:url('/afbeeldingen/spellen/spel6.png')
+}
+
+.spel7 {
+    background-image:url('/afbeeldingen/spellen/spel7.png')
+}
+
+.spel8 {
+    background-image:url('/afbeeldingen/spellen/spel8.png')
+}
+
+.spel9 {
+    background-image:url('/afbeeldingen/spellen/spel9.png')
+}
+
+.spel10 {
+    background-image:url('/afbeeldingen/spellen/spel10.png')
+}
+
+.spel11 {
+    background-image:url('/afbeeldingen/spellen/spel11.png')
+}
+
+.spel12 {
+    background-image:url('/afbeeldingen/spellen/spel12.png')
+}
+
+.spel13 {
+    background-image:url('/afbeeldingen/spellen/spel13.png')
+}
+
+.spel14 {
+    background-image:url('/afbeeldingen/spellen/spel14.png')
+}
+
+.spel15 {
+    background-image:url('/afbeeldingen/spellen/spel15.png')
+}
+
+.spel16 {
+    background-image:url('/afbeeldingen/spellen/spel16.png')
+}
+
 h4{
     color:#FFF;
 	font-size:18px;
